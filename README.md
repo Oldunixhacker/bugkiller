@@ -19,6 +19,8 @@ Bugkiller supports the LAMP stack with PHP.
 Check the [Bugkiller Wiki](https://github.com/TylerMS887/bugkiller/wiki)
 for installation steps.
 
+WAMP software is untested.
+
 ## Why Bugkiller?
 
 Bugzilla is dead. Phabricator is (kinda) dead. GitHub Issues is alive but is only
