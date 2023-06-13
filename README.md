@@ -15,7 +15,7 @@ project. It uses a MySQL database.
 
 ## Install
 
-Bugkiller is AMPware, meaning it supports the LAMP stack with PHP.
+Bugkiller is AMPware, meaning it supports most \*AMP stacks.
 Check the [Bugkiller Wiki](https://github.com/TylerMS887/bugkiller/wiki)
 for installation steps.
 
