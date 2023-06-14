@@ -27,15 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Description is required.";
     $skipcreate = true;
   }
-  $sql = "INSERT INTO bugs (bug_name, bug_description, status, priority) VALUES ('$title', '$description', 'Open', '$priority')";
   // Execute the SQL statement
-  if (mysqli_query($conn, $sql) and $skipcreate == false) {
-    header("Location: /bugkiller");
-    exit;
-  } elseif ($skipcreate == false) {
-    echo "Something went wrong. Try again.";
+  if ($skipcreate == false) {
+    $sql = "INSERT INTO bugs (bug_name, bug_description, status, priority) VALUES ('$title', '$description', 'Open', '$priority')";
+    if (mysqli_query($conn, $sql)) {
+      header("Location: /bugkiller");
+      exit;
+    } else {
+      echo "Something went wrong. Try again.";
+    }
   }
-}
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
