@@ -10,7 +10,7 @@
 //error_reporting(E_ALL);
 
 if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
-    echo 'Couldn\'t find PHP MySQLi. It is possible that your server wasn\'t configured correctly.';
+    echo 'Couldn\'t find php mysqli. It is possible that your server wasn\'t configured correctly.';
     exit;
 }
 
