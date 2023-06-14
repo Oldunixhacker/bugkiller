@@ -4,6 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $searchq = mysqli_real_escape_string($conn, $_POST["search"]);
 } else {
   $searchq = "";
+}
 ?>
 <!DOCTYPE html>
 <html>
