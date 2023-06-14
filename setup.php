@@ -5,6 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     $dbname = $_POST['dbname'];
     $projectname = $_POST['projectname'];
+    $wikitextallowed = $_POST['wwallowed'];
 
     // Write the config values to the config.ini file
     $config = "servername = \"$servername\"\n";
@@ -12,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $config .= "password = \"$password\"\n";
     $config .= "dbname = \"$dbname\"\n";
     $config .= "projectname = \"$projectname\"\n";
+    $config .= "wikitextallowed = $wikitextallowed\n";
 
     echo "<title>Bugkiller Setup</title>";
     echo "<link rel=\"stylesheet\" href=\"/style.css\">";
@@ -53,7 +55,7 @@ if (file_exists('config.ini')) {
                 <label for="projectname">Project name:</label>
                 <input type="text" name="projectname" required><br><br>
             
-                <input type="checkbox" id="wwallowed" name="wwallowed" value="1">
+                <input type="checkbox" id="wwallowed" name="wwallowed" value="true">
                 <label for="wwallowed"> Allow Wikitext formatting in bug descriptions</label><br><br>
 
                 <p>After filling out the form above, you can get your configuration file.</p>
