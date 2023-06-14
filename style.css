@@ -4,8 +4,8 @@ body {
 }
 textarea {
   height: 500px;
-  width: 700px;
-  resize: vertical;
+  width: 99%;
+  resize: none;
   padding: 10px;
 }
 .bugkiller-button {
@@ -25,8 +25,7 @@ textarea {
   background-color: #a1a1a1;
 }
 input[type="text"] {
-  resize: horizontal;
   padding: 10px;
   font-family: monospace;
-  width: 700px;
+  width: 99%;
 }
