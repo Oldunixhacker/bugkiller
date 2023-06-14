@@ -1,7 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Get the search term from the form
-  $searchq = mysqli_real_escape_string($conn, $_POST["search"]);
+  $searchq = $_POST["search"];
 } else {
   $searchq = "";
 }
