@@ -15,11 +15,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $description = $_POST["description"];
   $priority = $_POST["status"];
   $skipcreate = false;
-  if ($title == "") {
+  if ($title == "" and $description == "") {
+    echo "Title and description are required. If you do not wan to fill out the form, you can <a href=\"/bugkiller/search.php\">search for existing bugs</a>.";
+    $skipcreate = true;
+  }
+  if ($title == "" and $description != "") {
     echo "Title is required.";
     $skipcreate = true;
   }
-  if ($description == "") {
+  if ($description == "" and $title != "") {
     echo "Description is required.";
     $skipcreate = true;
   }
@@ -28,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (mysqli_query($conn, $sql) and $skipcreate == false) {
     header("Location: /bugkiller");
     exit;
-  } else {
+  } elif ($skipcreate == false) {
     echo "Something went wrong. Try again.";
   }
 }
