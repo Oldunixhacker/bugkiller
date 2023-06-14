@@ -1,11 +1,3 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Helper to send the search query back to the input box.
-  $search_query = mysqli_real_escape_string($conn, $_POST["search"]);
-else {
-  $search_query = "";
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +9,7 @@ else {
   <h1>Bug Search</h1>
 
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <input type="text" id="search" name="search" value="<?php echo '$search_query'; ?>">
+    <input type="text" id="search" name="search">
     <input type="submit" value="Search" class="bugkiller-button">
   </form>
 
