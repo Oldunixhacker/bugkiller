@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $priority = $_POST["status"];
   $skipcreate = false;
   if ($title == "" and $description == "") {
-    echo "Title and description are required. If you do not wan to fill out the form, you can <a href=\"/bugkiller/search.php\">search for existing bugs</a>.";
+    echo "Empty form response. Please fill out the form to submit a bug.";
     $skipcreate = true;
   }
   if ($title == "" and $description != "") {
@@ -56,6 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <option value="Medium">Medium</option>
         <option value="Low">Low</option>
         </select><br><br>
+        <input type="checkbox" name="searched" required>
+        <label for="searched"> I confirm that I have <a href="/bugkiller/search.php">searched for existing bugs</a>.</label><br><br>
         <input type="submit" value="Report" class="bugkiller-button">
         </form>
 </body>
