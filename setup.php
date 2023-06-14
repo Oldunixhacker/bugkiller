@@ -23,15 +23,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $config .= "dbname = \"$dbname\"\n";
     $config .= "projectname = \"$projectname\"\n";
     $config .= "wikitextallowed = $wikitextallowed\n";
-
-    echo "<title>Bugkiller Setup</title>";
-    echo "<h1>Bugkiller configuration was generated!</h1>";
-    echo "<p>Paste the following text into config.ini in your Bugkiller root directory:</p>";
-    echo "<pre>";
-    echo $config;
-    echo "</pre>";
-    echo "<p><strong>Remember to configure your web server to disallow requests to config.ini, as it contains your database password. Bugkiller will still be able to retrieve the file for configuration.</strong></p>";
-    exit;
+    $fp = fopen("config.ini", "wb");
+    if( $fp == false ){
+        echo "Failed to write the configuration file. As a fallback, you can see the source code of the configuration file:";
+        echo "<pre>";
+        echo "$config";
+        echo "</pre>";
+        exit;
+    } else {
+        fwrite($fp, $content);
+        fclose($fp);
+    }
 }
 if (file_exists('config.ini')) {
     $config = parse_ini_file("config.ini");
