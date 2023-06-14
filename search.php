@@ -9,7 +9,7 @@
   <h1>Bug Search</h1>
 
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <input type="text" id="search" name="search">
+    <input type="text" id="search" name="search" style="width: 300px;">
     <input type="submit" value="Search" class="bugkiller-button">
   </form>
 
