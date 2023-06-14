@@ -1,3 +1,10 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Get the search term from the form
+  $searchq = mysqli_real_escape_string($conn, $_POST["search"]);
+} else {
+  $searchq = "";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +16,7 @@
   <h1>Bug Search</h1>
 
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <input type="text" id="search" name="search" style="width: 300px;">
+    <input type="text" id="search" name="search" style="width: 300px;" value='<?php echo "$searchq" ?>' required>
     <input type="submit" value="Search" class="bugkiller-button">
   </form>
 
