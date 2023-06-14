@@ -51,6 +51,9 @@ if (file_exists('config.ini')) {
 
                 <label for="projectname">Project name:</label>
                 <input type="text" name="projectname" required><br><br>
+            
+                <input type="checkbox" id="wwallowed" name="wwallowed" value="1">
+                <label for="wwallowed"> Allow Wikitext formatting in bug descriptions</label><br>
 
                 <input type="submit" value="Display Configuration File" class="bugkiller-button">
         </form>
