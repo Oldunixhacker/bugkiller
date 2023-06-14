@@ -1,4 +1,10 @@
 <?php
+$servername = "";
+$username = "";
+$password = "";
+$dbname = "";
+$projectname = "";
+$wikitextallowed = 0;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $servername = $_POST['servername'];
     $username = $_POST['username'];
@@ -29,8 +35,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit;
 }
 if (file_exists('config.ini')) {
-  echo "Already configured.";
-  exit;
+    $config = parse_ini_file("config.ini");
+    $servername = $config['servername'];
+    $username = $config['username'];
+    $password = $config['password'];
+    $dbname = $config['dbname'];
+    $projectname = $config['projectname'];
+    $wikitextallowed = $config['wikitextallowed'];
 }
 ?>
 
@@ -44,19 +55,19 @@ if (file_exists('config.ini')) {
         <p>Get Bugkiller up and running in a few clicks.</p>
         <form method="post">
                 <label for="servername">Server name:</label>
-                <input type="text" name="servername" required><br><br>
+                <input type="text" name="servername" value="<?php echo '$servername'; ?>" required><br><br>
 
                 <label for="username">MySQL username:</label>
-                <input type="text" name="username" required><br><br>
+                <input type="text" name="username" value="<?php echo '$username'; ?>" required><br><br>
 
                 <label for="password">MySQL user password:</label>
                 <input type="password" name="password"><br><br>
 
                 <label for="dbname">Database name:</label>
-                <input type="text" name="dbname" required><br><br>
+                <input type="text" value="<?php echo 'dbname'; ?>" name="dbname" required><br><br>
 
                 <label for="projectname">Project name:</label>
-                <input type="text" name="projectname" required><br><br>
+                <input type="text" value="<?php echo 'projectname'; ?>" name="projectname" required><br><br>
             
                 <input type="checkbox" id="wwallowed" name="wwallowed" value="true">
                 <label for="wwallowed"> Allow Wikitext formatting in bug descriptions</label><br><br>
