@@ -1,3 +1,7 @@
+<?php
+$config = parse_ini_file("config.ini");
+
+// Variables
 $servername = $config['servername'];
 $username = $config['username'];
 $password = $config['password'];
