@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (mysqli_query($conn, $sql) and $skipcreate == false) {
     header("Location: /bugkiller");
     exit;
-  } elif ($skipcreate == false) {
+  } elseif ($skipcreate == false) {
     echo "Something went wrong. Try again.";
   }
 }
