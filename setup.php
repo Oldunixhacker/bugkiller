@@ -39,6 +39,7 @@ if (file_exists('config.ini')) {
     $username = $config['username'];
     $dbname = $config['dbname'];
     $projectname = $config['projectname'];
+    $password = $config['password'];
     $wikitextallowed = $config['wikitextallowed'];
     echo "<p><em>Note: An existing configuration file was detected and has been loaded.</em></p>";
 }
