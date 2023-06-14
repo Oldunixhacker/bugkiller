@@ -1,7 +1,3 @@
-<?php
-$config = parse_ini_file("config.ini");
-
-// Variables
 $servername = $config['servername'];
 $username = $config['username'];
 $password = $config['password'];
@@ -12,7 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $conn = new mysqli($servername, $username, $password, $dbname);
   $title = $_POST["title"];
   $description = $_POST["description"];
-  $sql = "INSERT INTO bugs (bug_name, bug_description, status, priority) VALUES ('$title', '$description', 'Open', 'Needs Triage')";
+  $priority = $_POST["status"];
+  $sql = "INSERT INTO bugs (bug_name, bug_description, status, priority) VALUES ('$title', '$description', 'Open', '$priority')";
   // Execute the SQL statement
   if (mysqli_query($conn, $sql)) {
     header("Location: /bugkiller");
