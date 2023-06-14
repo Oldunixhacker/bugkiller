@@ -6,6 +6,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $dbname = $_POST['dbname'];
     $projectname = $_POST['projectname'];
     $wikitextallowed = $_POST['wwallowed'];
+    if ($wikitextallowed == "") {
+        $wikitextallowed = "false";
+    }
 
     // Write the config values to the config.ini file
     $config = "servername = \"$servername\"\n";
