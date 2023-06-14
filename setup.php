@@ -1,6 +1,7 @@
 <?php
 $servername = "";
 $username = "";
+$password = "";
 $dbname = "";
 $projectname = "";
 $wikitextallowed = false;
@@ -39,7 +40,7 @@ if (file_exists('config.ini')) {
     $dbname = $config['dbname'];
     $projectname = $config['projectname'];
     $wikitextallowed = $config['wikitextallowed'];
-    echo "<p><em>Note: An existing configuration file was detected and has been loaded. For security reasons, your password has not been loaded.</em></p>";
+    echo "<p><em>Note: An existing configuration file was detected and has been loaded.</em></p>";
 }
 ?>
 
@@ -59,7 +60,7 @@ if (file_exists('config.ini')) {
                 <input type="text" name="username" value='<?php echo "$username"; ?>' required><br><br>
 
                 <label for="password">MySQL user password:</label>
-                <input type="password" name="password"><br><br>
+                <input type="password" name="password" value='<?php echo "password"; ?>'><br><br>
 
                 <label for="dbname">Database name:</label>
                 <input type="text" value='<?php echo "$dbname"; ?>' name="dbname" required><br><br>
