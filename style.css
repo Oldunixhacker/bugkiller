@@ -1,11 +1,12 @@
 body {
-  font-family: serif;
+  font-family: sans-serif;
   padding: 10px;
 }
-textbox {
+textarea {
   height: 500px;
   width: 700px;
   resize: vertical;
+  padding: 10px;
 }
 .bugkiller-button {
   padding: 10px;
@@ -15,6 +16,7 @@ textbox {
   background-color: #ebebeb;
   font-size: 1.1em;
   font-weight: 700;
+  border-radius: 3px;
 }
 .bugkiller-button:hover {
   background-color: #b3b3b3;
