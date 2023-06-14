@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $config .= "dbname = \"$dbname\"\n";
     $config .= "projectname = \"$projectname\"\n";
 
-    echo "<title>Bugkiller SQL Setup</title>";
+    echo "<title>Bugkiller Setup</title>";
     echo "<link rel=\"stylesheet\" href=\"/style.css\">";
     echo "<h1>Bugkiller configuration was generated!</h1>";
     echo "<p>Paste the following text into config.ini in your Bugkiller root directory:</p>";
@@ -35,7 +35,8 @@ if (file_exists('config.ini')) {
         <title>Bugkiller SQL Setup</title>
 </head>
 <body>
-        <h1>Bugkiller SQL Setup</h1>
+        <h1>Bugkiller Setup</h1>
+        <p>Get Bugkiller up and running in a few clicks.</p>
         <form method="post">
                 <label for="servername">Server name:</label>
                 <input type="text" name="servername" required><br><br>
@@ -53,8 +54,9 @@ if (file_exists('config.ini')) {
                 <input type="text" name="projectname" required><br><br>
             
                 <input type="checkbox" id="wwallowed" name="wwallowed" value="1">
-                <label for="wwallowed"> Allow Wikitext formatting in bug descriptions</label><br>
+                <label for="wwallowed"> Allow Wikitext formatting in bug descriptions</label><br><br>
 
+                <p>After filling out the form above, you can get your configuration file.</p>
                 <input type="submit" value="Display Configuration File" class="bugkiller-button">
         </form>
 </body>
