@@ -33,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         fwrite($fp, $content);
         fclose($fp);
+        header("Location: /bugkiller");
+        exit;
     }
 }
 if (file_exists('config.ini')) {
