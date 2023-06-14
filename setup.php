@@ -49,7 +49,7 @@ if (file_exists('config.ini')) {
                 <label for="dbname">Database name:</label>
                 <input type="text" name="dbname" required><br><br>
 
-                <label for="dbname">Project name:</label>
+                <label for="projectname">Project name:</label>
                 <input type="text" name="projectname" required><br><br>
 
                 <input type="submit" value="Display Configuration File" class="bugkiller-button">
