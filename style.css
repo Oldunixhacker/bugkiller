@@ -24,3 +24,9 @@ textarea {
 .bugkiller-button:active {
   background-color: #a1a1a1;
 }
+input[type="text"] {
+  resize: horizontal;
+  padding: 10px;
+  font-family: monospace;
+  width: 700px;
+}
