@@ -1,7 +1,6 @@
 <?php
 $servername = "";
 $username = "";
-$password = "";
 $dbname = "";
 $projectname = "";
 $wikitextallowed = 0;
@@ -25,7 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $config .= "wikitextallowed = $wikitextallowed\n";
 
     echo "<title>Bugkiller Setup</title>";
-    echo "<link rel=\"stylesheet\" href=\"/style.css\">";
     echo "<h1>Bugkiller configuration was generated!</h1>";
     echo "<p>Paste the following text into config.ini in your Bugkiller root directory:</p>";
     echo "<pre>";
@@ -38,10 +36,10 @@ if (file_exists('config.ini')) {
     $config = parse_ini_file("config.ini");
     $servername = $config['servername'];
     $username = $config['username'];
-    $password = $config['password'];
     $dbname = $config['dbname'];
     $projectname = $config['projectname'];
     $wikitextallowed = $config['wikitextallowed'];
+    echo "<p><em>Note: An existing configuration file was detected and has been loaded. For security reasons, your password has not been loaded.</em></p>";
 }
 ?>
 
@@ -55,19 +53,19 @@ if (file_exists('config.ini')) {
         <p>Get Bugkiller up and running in a few clicks.</p>
         <form method="post">
                 <label for="servername">Server name:</label>
-                <input type="text" name="servername" value="<?php echo '$servername'; ?>" required><br><br>
+                <input type="text" name="servername" value='<?php echo "$servername"; ?>' required><br><br>
 
                 <label for="username">MySQL username:</label>
-                <input type="text" name="username" value="<?php echo '$username'; ?>" required><br><br>
+                <input type="text" name="username" value='<?php echo "$username"; ?>' required><br><br>
 
                 <label for="password">MySQL user password:</label>
                 <input type="password" name="password"><br><br>
 
                 <label for="dbname">Database name:</label>
-                <input type="text" value="<?php echo 'dbname'; ?>" name="dbname" required><br><br>
+                <input type="text" value='<?php echo "$dbname"; ?>' name="dbname" required><br><br>
 
                 <label for="projectname">Project name:</label>
-                <input type="text" value="<?php echo 'projectname'; ?>" name="projectname" required><br><br>
+                <input type="text" value='<?php echo "$projectname"; ?>' name="projectname" required><br><br>
             
                 <input type="checkbox" id="wwallowed" name="wwallowed" value="true">
                 <label for="wwallowed"> Allow Wikitext formatting in bug descriptions</label><br><br>
