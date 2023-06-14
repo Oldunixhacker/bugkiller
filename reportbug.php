@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <h1>Report a Bug</h1>
-<?php if ($wikitextallowed == true) { echo "<p>Wikitext formatting is supported.</p>" } ?>
+<?php if ($wikitextallowed == true) { echo "<p>Wikitext formatting is supported.</p>"; } ?>
 <p>Please note that <?php echo $projectname . " Bugkiller"; ?> only allows bug reports about <?php echo $projectname ?>.</p>
 <form method="post">
         <input type="text" id="title" name="title" placeholder="Title" required><br><br>
