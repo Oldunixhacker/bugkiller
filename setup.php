@@ -3,7 +3,7 @@ $servername = "";
 $username = "";
 $dbname = "";
 $projectname = "";
-$wikitextallowed = 0;
+$wikitextallowed = false;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $servername = $_POST['servername'];
     $username = $_POST['username'];
@@ -67,8 +67,8 @@ if (file_exists('config.ini')) {
                 <label for="projectname">Project name:</label>
                 <input type="text" value='<?php echo "$projectname"; ?>' name="projectname" required><br><br>
             
-                <input type="checkbox" id="wwallowed" name="wwallowed" value="true">
-                <label for="wwallowed" <?php if ($wikitextallowed == true) { echo "checked" } ?> > Allow Wikitext formatting in bug descriptions</label><br><br>
+                <?php if ($wikitextallowed == true) {echo '<input type="checkbox" id="wwallowed" name="wwallowed" value="true" checked>'} else {echo '<input type="checkbox" id="wwallowed" name="wwallowed" value="true">'} ?>
+                <label for="wwallowed"> Allow Wikitext formatting in bug descriptions</label><br><br>
 
                 <p>After filling out the form above, you can get your configuration file.</p>
                 <input type="submit" value="Display Configuration File" class="bugkiller-button">
