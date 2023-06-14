@@ -61,7 +61,7 @@ if (file_exists('config.ini')) {
                 <input type="text" name="username" value='<?php echo "$username"; ?>' required><br><br>
 
                 <label for="password">MySQL user password:</label>
-                <input type="password" name="password" value='<?php echo "$password"; ?>'><br><br>
+                <input type="password" name="password"><br><br>
 
                 <label for="dbname">Database name:</label>
                 <input type="text" value='<?php echo "$dbname"; ?>' name="dbname" required><br><br>
