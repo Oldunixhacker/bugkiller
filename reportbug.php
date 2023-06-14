@@ -14,17 +14,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $title = $_POST["title"];
   $description = $_POST["description"];
   $priority = $_POST["status"];
+  $skipcreate = false;
   if ($title == "") {
     echo "Title is required.";
-    return;
+    $skipcreate = true;
   }
   if ($description == "") {
     echo "Description is required.";
-    return;
+    $skipcreate = true;
   }
   $sql = "INSERT INTO bugs (bug_name, bug_description, status, priority) VALUES ('$title', '$description', 'Open', '$priority')";
   // Execute the SQL statement
-  if (mysqli_query($conn, $sql)) {
+  if (mysqli_query($conn, $sql) and $skipcreate == false) {
     header("Location: /bugkiller");
     exit;
   } else {
