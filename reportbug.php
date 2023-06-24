@@ -1,12 +1,6 @@
 <?php
-$config = parse_ini_file("config.ini");
+require_once "configure.php";
 
-// Variables
-$servername = $config['servername'];
-$username = $config['username'];
-$password = $config['password'];
-$dbname = $config['dbname'];
-$projectname = $config['projectname'];
 $wikitextallowed = $config['wikitextallowed'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
