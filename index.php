@@ -55,6 +55,14 @@ echo "<noscript>id=\"js-disabled\">Bugkiller works best with JavaScript enabled.
 </head>
 <body>
 <h1><?php echo $projectname . " Bugkiller"; ?></h1>
+<div id="bugkiller-report-js-button" style="display:none">
 <button class="bugkiller-button" onclick="window.location.href = '<?php echo "$path"; ?>/reportbug.php';"><span class="bugkiller-icon-mail"></span> Report a Bug</button>
+</div>
+<script>
+document.getElementById('bugkiller-report-js-button').style.display='block';
+</script>
+<noscript>
+<a href='<?php echo "$path"; ?>/reportbug.php'>Report a Bug</a>
+</noscript>
 </body>
 </html>
