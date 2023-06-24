@@ -53,6 +53,6 @@ $conn->close();
 </head>
 <body>
 <h1><?php echo $projectname . " Bugkiller"; ?></h1>
-<button class="bugkiller-button" onclick="window.location.href = '<?php echo "$path"; ?>/reportbug.php';">Report a Bug</button>
+<button class="bugkiller-button" onclick="window.location.href = '<?php echo "$path"; ?>/reportbug.php';"><span class="bugkiller-icon-mail"></span> Report a Bug</button>
 </body>
 </html>
