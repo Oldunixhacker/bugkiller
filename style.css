@@ -30,5 +30,5 @@ input[type="text"] {
   width: 99%;
 }
 #configpath {
-  visibility: hidden;
+  visibility: none;
 }
