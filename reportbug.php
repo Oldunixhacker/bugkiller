@@ -1,4 +1,5 @@
 <?php
+require_once "topbar.php";
 require_once "configure.php";
 
 $wikitextallowed = $config['wikitextallowed'];
