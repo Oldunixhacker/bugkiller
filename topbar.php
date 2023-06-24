@@ -21,11 +21,15 @@
 $config = parse_ini_file("config.ini");
 $path = "//" . $config['path'];
 $projectname = $config['projectname'];
+
+// Font Awesome icon
+echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">';
+
 echo '<div id="bugkiller-topbar">';
 echo <<<endofhtml
-<form method="post" action="/search.php">
-    <input type="text" id="search" name="search" style="width: 300px;" value="" required="">
-    <input type="submit" value="Search" class="bugkiller-button">
+<form method="post" action="/search.php" style="float: right;">
+    <input type="text" id="search" name="search" style="width: 300px;" value="" required="" placeholder="Search bugs...">
+    <button type="submit" action="search.php" method="post"><i class="fa-solid fa-search"></i></button>
 </form>
 endofhtml;
 echo "<span style='float: right'>Profile placeholder</span>";
