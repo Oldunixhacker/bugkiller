@@ -40,3 +40,10 @@ input[type="text"] {
   font-family: wingdings;
   content: "*";
 }
+#js-disabled {
+  background-color: red;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+}
