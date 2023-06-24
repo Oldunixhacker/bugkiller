@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $dbname = $_POST['dbname'];
     $projectname = $_POST['projectname'];
     $wikitextallowed = $_POST['wwallowed'];
+    $setupallowed = $_POST['setupallowed'];
     if ($wikitextallowed == "") {
         $wikitextallowed = "false";
     }
@@ -32,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     $config .= "projectname = \"$projectname\"\n";
     $config .= "wikitextallowed = $wikitextallowed\n";
+    $config .= "setupallowed = $setupallowed\n";
     $config .= "path = \"$path\"";
     echo "The resulting config.ini file is:";
     echo "<pre>";
@@ -47,20 +49,24 @@ if (file_exists('config.ini')) {
     $projectname = $config['projectname'];
     $password = $config['password'];
     $wikitextallowed = $config['wikitextallowed'];
+    $setupallowed = $config['setupallowed'];
     echo "<p><em>Note: An existing configuration file was detected and has been loaded.</em></p>";
+    if (!$setupallowed) {
+        echo "<p>This script has been disabled by a system administrator. You must manually edit the config.ini file instead.";
+    }
 }
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Bugkiller SQL Setup</title>
+        <title>Bugkiller SQL setupallowed</title>
 </head>
 <body>
-        <h1>Bugkiller Setup</h1>
+        <h1>Bugkiller setupallowed</h1>
         <p>Get Bugkiller up and running in a few clicks.</p>
         <form method="post">
-                <label for="path">Bugkiller web path: <input type="text" value='<?php echo "$path"; ?>' readonly></input> (unmodifiable from setup.php, edit your config.ini file to change this later, in case you get a new domain.)</label>
+                <label for="path">Bugkiller web path: <input type="text" value='<?php echo "$path"; ?>' readonly></input> (unmodifiable from setupallowed.php, edit your config.ini file to change this later, in case you get a new domain.)</label>
                 <span id="path"><!--dummy--></span><br><br>
                 
                 <label for="servername">Server name:</label>
@@ -80,6 +86,8 @@ if (file_exists('config.ini')) {
             
                 <?php if ($wikitextallowed == true) {echo '<input type="checkbox" id="wwallowed" name="wwallowed" value="true" checked>';} else {echo '<input type="checkbox" id="wwallowed" name="wwallowed" value="true">';} ?>
                 <label for="wwallowed"> Allow Wikitext formatting in bug descriptions</label><br><br>
+                <input type="checkbox" id="setupallowed" name="setupallowed" value="true" checked>
+                <label for="wwallowed"> Allow further use of this script instead of manually editing config.ini</label><br><br>
 
                 <p>After filling out the form above, you can apply the configuration.</p>
                 <input type="submit" value="Configure">
