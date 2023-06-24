@@ -9,6 +9,11 @@ if ($arg == "") {
   header("Location: $pathwithhttp/search.php");
   exit;
 }
+if (!is_numeric($arg)) {
+  echo "<p><b>Bad bug identifier:</b> Bug IDs must be an Arabic numeral.</p>";
+  header("HTTP/1.1 400 Bad Request");
+  exit;
+}
 echo "Got $arg";
 ?>
 <link rel="stylesheet" href="/style.css">
