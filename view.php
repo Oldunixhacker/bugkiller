@@ -11,4 +11,4 @@ if ($arg == "") {
 }
 echo "Got $arg";
 ?>
-<link type="stylesheet" href='<?php echo "$path"; ?>'>
+<link type="stylesheet" href='<?php echo "$path"; ?>/style.css'>
