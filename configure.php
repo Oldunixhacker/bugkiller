@@ -16,7 +16,6 @@ if ($password == "") {
 };
 echo "<span id=\"configpath\">Path defined in config.ini: $path</span>";
 if(!isset($_SESSION['js'])||$_SESSION['js']==""){
-  echo "<noscript><meta http-equiv='refresh' content='0;url=/get-javascript-status.php&js=0'> </noscript>";
    $js = true;
 
  }elseif(isset($_SESSION['js'])&& $_SESSION['js']=="0"){
