@@ -22,10 +22,12 @@ $config = parse_ini_file("config.ini");
 $path = "//" . $config['path'];
 $projectname = $config['projectname'];
 echo '<div id="bugkiller-topbar">';
-echo """  <form method=\"post\" action=\"/search.php\">
-    <input type=\"text\" id=\"search\" name=\"search\" style=\"width: 300px;\" value=\"\" required=\"\">
-    <input type=\"submit\" value=\"Search\" class=\"bugkiller-button\">
-  </form>""";
+echo <<<endofhtml
+<form method="post" action="/search.php">
+    <input type="text" id="search" name="search" style="width: 300px;" value="" required="">
+    <input type="submit" value="Search" class="bugkiller-button">
+</form>
+endofhtml;
 echo "<span style='float: right'>Profile placeholder</span>";
 echo "<a href='$path' id='bugkiller-logo'>$projectname</a><span style='margin-right: 10px'></span>";
 echo "<a href='$path/reportbug.php'>Report a Bug</a><span style='margin-right: 10px'></span>";
