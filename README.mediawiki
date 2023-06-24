@@ -13,7 +13,7 @@ project. It uses a MySQL database.
 
 ==Install==
 
-Bugkiller is AMPware, meaning it supports most \*AMP stacks.
+Bugkiller is AMPware, meaning it supports most <nowiki>*</nowiki>AMP stacks.
 Check the [https://github.com/TylerMS887/bugkiller/wiki Bugkiller Wiki]
 for installation steps.
 
