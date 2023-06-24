@@ -38,7 +38,7 @@ if ($conn->connect_error) {
 $sql = "CREATE TABLE IF NOT EXISTS bugs (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, bug_name VARCHAR(30) NOT NULL, bug_description VARCHAR(100) NOT NULL, status VARCHAR(30) NOT NULL, priority VARCHAR(30) NOT NULL, date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);";
 
 if (!$conn->query($sql) === TRUE) {
-  echo "Error creating the Bugkiller database.<br>" . $conn->error;
+  echo "Error preparing the Bugkiller database.<br>" . $conn->error;
   exit;
 }
 
@@ -49,10 +49,10 @@ $conn->close();
 <html lang="en">
 <head>
 <title><?php echo $projectname . " Bugkiller"; ?></title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="<?php echo "$path"; ?>/style.css">
 </head>
 <body>
 <h1><?php echo $projectname . " Bugkiller"; ?></h1>
-<button class="bugkiller-button" onclick="window.location.href = '/bugkiller/reportbug.php';">Report a Bug</button>
+<button class="bugkiller-button" onclick="window.location.href = '<?php echo "$path"; ?>/reportbug.php';">Report a Bug</button>
 </body>
 </html>
