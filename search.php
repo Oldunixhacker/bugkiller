@@ -1,4 +1,5 @@
 <?php
+require_once "topbar.php";
 require_once "configure.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $searchq = $_POST["search"];
