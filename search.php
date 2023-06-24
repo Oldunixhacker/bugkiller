@@ -51,12 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       } else {
         echo "$resultcount results found.";
       }
-      echo "<table>";
-      echo "<tr><th>Bug Name</th><th>Bug Description</th><th>Status</th><th>Priority</th><th>Date Created</th></tr>";
       while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr><td>" . $row["bug_name"] . "</td><td>" . $row["bug_description"] . "</td><td>" . $row["status"] . "</td><td>" . $row["priority"] . "</td><td>" . $row["date_created"] . "</td></tr>";
+        echo "<a href=\"" . $path . "/view.php/" . $row["id"] . "\">" . $row["bug_name"] . "</a><br><span class=\"search-result-description\">" . substr($row["bug_description"], 0, 10) . "</span>";
       }
-      echo "</table>";
     } else {
       // Output a message if no results were found
       echo "<p>Couldn't find any bugs that match \"$search\". You can <a href=\"$path/reportbug.php\">report a bug</a> with that name.</p>";
