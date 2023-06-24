@@ -46,4 +46,6 @@ input[type="text"] {
   text-align: center;
   padding: 10px;
   border-radius: 10px;
+  color: white;
+  width: 100%;
 }
