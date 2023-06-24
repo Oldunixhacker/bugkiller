@@ -25,5 +25,5 @@ if ($password == "") {
   exit;
 };
 echo "<span id=\"configpath\">Path defined in config.ini: $path</span>";
-echo "<noscript id=\"js-disabled\">Bugkiller works best with a JavaScript-compatible browser if JavaScript turned on.</noscript>";
+echo "<noscript id=\"js-disabled\">Bugkiller works best with a JavaScript-compatible browser if JavaScript is turned on.</noscript>";
 ?>
