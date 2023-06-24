@@ -63,3 +63,11 @@ input[type="text"] {
   padding-right: 15px;
   box-shadow: 0 -6px 7px -7px rgb(71, 71, 71, 0.5) inset;
 }
+#bugkiller-topbar a {
+  color: black;
+  text-decoration: none;
+  opacity: 0.5%;
+}
+#bugkiller-topbar a b {
+  opacity: 90%;
+}
