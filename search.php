@@ -21,12 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </form>
 
   <?php
-  $config = parse_ini_file("config.ini");
-  $servername = $config['servername'];
-  $username = $config['username'];
-  $password = $config['password'];
-  $dbname = $config['dbname'];
-  $projectname = $config['projectname'];
+  require_once "configure.php";
 
   // Connect to the database
   $conn = mysqli_connect($servername, $username, $password, $dbname);
