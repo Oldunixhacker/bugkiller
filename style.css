@@ -72,7 +72,7 @@ input[type="text"] {
   color: white;
   text-decoration: none;
 }
-#bugkiller-topbar a b {
+#bugkiller-topbar#bugkiller-logo {
   font-size: 2em;
 }
 #bugkiller-topbar a:visited {
