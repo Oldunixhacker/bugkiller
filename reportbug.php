@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <option value="Low">Low</option>
         </select><br><br>
         <input type="checkbox" name="searched" id="searched" required>
-        <label for="searched"> I confirm that I have <a href="/bugkiller/search.php">searched for existing bugs</a>.</label><br><br>
+        <label for="searched"> I confirm that I have <a href="<?php echo "$path"; ?>/search.php">searched for existing bugs</a>.</label><br><br>
         <input type="submit" value="Report" class="bugkiller-button">
         </form>
 </body>
