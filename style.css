@@ -29,3 +29,6 @@ input[type="text"] {
   font-family: monospace;
   width: 99%;
 }
+#configpath {
+  visibility: hidden;
+}
