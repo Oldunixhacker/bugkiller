@@ -23,6 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $config .= "username = \"$username\"\n";
     $config .= "password = \"$password\"\n";
     $config .= "dbname = \"$dbname\"\n";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    
+    // Check connection
+    if ($conn->connect_error) {
+      echo "Invalid database options.<br>MySQL says: " . $conn->connect_error;
+      exit;
+    }
     $config .= "projectname = \"$projectname\"\n";
     $config .= "wikitextallowed = $wikitextallowed\n";
     $config .= "path = \"$path\"";
@@ -53,7 +60,7 @@ if (file_exists('config.ini')) {
         <h1>Bugkiller Setup</h1>
         <p>Get Bugkiller up and running in a few clicks.</p>
         <form method="post">
-                <label for="path">Bugkiller web path: <b><?php echo "$path"; ?></b> (unmodifiable from setup.php, edit your config.ini file to change this, in case you get a new domain.)</label>
+                <label for="path">Bugkiller web path: <b><?php echo "$path"; ?></b> (unmodifiable from setup.php, edit your config.ini file to change this later, in case you get a new domain.)</label>
                 <span id="path"><!--dummy--></span><br><br>
                 
                 <label for="servername">Server name:</label>
