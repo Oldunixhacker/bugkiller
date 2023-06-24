@@ -66,6 +66,7 @@ input[type="text"] {
   padding: 15px;
   padding-left: 20px;
   padding-right: 20px;
+  color: white;
 }
 #bugkiller-topbar a {
   color: white;
@@ -81,5 +82,6 @@ input[type="text"] {
 }
 #bugkiller-topbar a:active {
   color: white;
+  opacity: 70%;
   text-decoration: none;
 }
