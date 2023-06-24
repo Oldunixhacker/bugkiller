@@ -15,19 +15,5 @@ if ($password == "") {
   exit;
 };
 echo "<span id=\"configpath\">Path defined in config.ini: $path</span>";
-if(!isset($_SESSION['js'])||$_SESSION['js']==""){
-   $js = true;
-
- }elseif(isset($_SESSION['js'])&& $_SESSION['js']=="0"){
-   $js = false;
-   $_SESSION['js']="";
-
- }elseif(isset($_SESSION['js'])&& $_SESSION['js']=="1"){
-   $js = true;
-   $_SESSION['js']="";
-}
-
-if (!$js) {
-    echo "<div id=\"js-disabled\">This site works best with JavaScript disabled.</div>";
-}
+echo "<noscript>id=\"js-disabled\">Bugkiller works best with a JavaScript-compatible browser if JavaScript turned on.</noscript>";
 ?>
