@@ -6,7 +6,7 @@ $path = parse_url($url, PHP_URL_PATH);
 $segments = explode('/', $path);
 $arg = $segments[2];
 if ($arg == "") {
-  header("Location: http:$path/search.php");
+  header("Location: /search.php");
   exit;
 }
 echo "Got $arg";
