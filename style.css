@@ -8,6 +8,15 @@ body {
   font-family: sans-serif;
   padding: 10px;
 }
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  text-decoration: underline;
+}
 textarea {
   height: 500px;
   width: 99%;
