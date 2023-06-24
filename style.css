@@ -1,3 +1,9 @@
+body {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
 #bugkiller-ui {
   font-family: sans-serif;
   padding: 10px;
@@ -61,21 +67,20 @@ input[type="text"] {
   padding: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  box-shadow: 0 -6px 7px -7px rgb(71, 71, 71, 0.5) inset;
 }
 #bugkiller-topbar a {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 #bugkiller-topbar a:visited {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 #bugkiller-topbar a:hover {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 #bugkiller-topbar a:active {
-  color: gray;
+  color: white;
   text-decoration: none;
 }
