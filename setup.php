@@ -25,19 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $config .= "projectname = \"$projectname\"\n";
     $config .= "wikitextallowed = $wikitextallowed\n";
     $config .= "path = \"$path\";
-    $fp = fopen("config.ini", "wb");
-    if( $fp == false ){
-        echo "Failed to write the configuration file. As a fallback, you can see the source code of the configuration file:";
-        echo "<pre>";
-        echo "$config";
-        echo "</pre>";
-        exit;
-    } else {
-        fwrite($fp, $content);
-        fclose($fp);
-        header("Location: /bugkiller");
-        exit;
-    }
+    echo "The resulting config.ini file is:";
+    echo "<pre>";
+    echo "$config";
+    echo "</pre>";
+    exit;
 }
 if (file_exists('config.ini')) {
     $config = parse_ini_file("config.ini");
