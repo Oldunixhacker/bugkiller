@@ -44,7 +44,6 @@ if (!$conn->query($sql) === TRUE) {
 // Close connection
 $conn->close();
 }
-echo "<span id=\"configpath\">Path defined in config.ini: $path</span>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
