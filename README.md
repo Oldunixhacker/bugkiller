@@ -3,6 +3,9 @@
 Bugkiller is a PHP script that allows you to manage bug reports for your
 project. It uses a MySQL database.
 
+[<img width=200 src="https://github.com/TylerMS887/bugkiller/assets/115214762/71b1124e-bf4a-4253-ab5f-a47b04e24a05">](https://github.com/TylerMS887/bugkiller/issues/new/choose)
+
+
 ## Features
 
 * OoUI-like interface, so that it fits perfectly with MediaWiki wiki farms and hosting services.
