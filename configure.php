@@ -9,4 +9,8 @@ $password = $config['password'];
 $dbname = $config['dbname'];
 $projectname = $config['projectname'];
 $path = $config['path'];
+if ($password == "") {
+  echo "<strong>For security reasons, it is no longer possible to use Bugkiller without a MySQL database password.</strong><br>Please alter the <code>$username</code> user to have a password.";
+  exit 1;
+}
 ?>
