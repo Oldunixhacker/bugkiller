@@ -4,6 +4,7 @@ $username = "";
 $password = "";
 $dbname = "";
 $projectname = "";
+$path = $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']);
 $wikitextallowed = false;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $path = $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']);
