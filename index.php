@@ -1,58 +1,19 @@
 <?php
-// If you are reading this script in your web browser then
-// your server probably isn't configured properly to run
-// PHP programs!
-//
-// See the INSTALL file for more information.
-
-// Uncomment for debugging
-//ini_set('display_startup_errors', 1);
-//error_reporting(E_ALL);
-
-if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
-    echo 'Couldn\'t find php mysqli. It is possible that your server wasn\'t configured correctly.';
-    exit;
-}
-
-// Show a warning for users that haven't configured Bugkiller using config.ini
-if (!file_exists('config.ini')) {
-  header('HTTP/1.1 500 Internal Server Error');
-  echo '<h1>Bugkiller Error: Internal Server Error</h1>';
-  echo '<p><code>config.ini</code> does not exist. Please run <a href="/bugkiller/setup.php"><code>setup.php</code></a> to set up the bug tracker\'s configuration.</p>';
-  echo '<p>Please note that additional errors might occur when you start the bug tracker even when configured. If you do get errors like those, ensure your MySQL database exists.</p>';
+// Script to auto-configure your bugkiller pages.
+// Do not modify this file - if you want to edit your bugkiller configuration,
+// edit config.ini which contains your config values.
+$config = parse_ini_file("config.ini");
+$servername = $config['servername'];
+$username = $config['username'];
+$password = $config['password'];
+$dbname = $config['dbname'];
+$projectname = $config['projectname'];
+$path = "//" . $config['path'];
+if ($password == "") {
+  header("HTTP/1.1 503 Service Unavailable");
+  echo "<strong>Note for users: $projectname is attempting to resolve a security issue related to this Bugkiller. Please wait until the site comes back online.</strong><br><br><strong>Note for the operator: For security reasons, it is no longer possible to use Bugkiller without a MySQL database password.</strong><br>Please alter the <code>$username</code> user to have a password.";
   exit;
-}
-
-// Warning: Ensure config.ini is inaccessible from the web.
-require_once "configure.php";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  echo "Connection failed: " . $conn->connect_error;
-  exit;
-}
-
-// Create table for bugs
-$sql = "CREATE TABLE IF NOT EXISTS bugs (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, bug_name VARCHAR(30) NOT NULL, bug_description VARCHAR(100) NOT NULL, status VARCHAR(30) NOT NULL, priority VARCHAR(30) NOT NULL, date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);";
-
-if (!$conn->query($sql) === TRUE) {
-  echo "Error preparing the Bugkiller database.<br>" . $conn->error;
-  exit;
-}
-
-// Close connection
-$conn->close();
+};
+echo "<span id=\"configpath\">Path defined in config.ini: $path</span>";
+echo "<noscript>id=\"js-disabled\">Bugkiller works best with JavaScript enabled.<br>Limited functionality is available when JavaScript is disabled, or not supported by your browser.</noscript>";
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title><?php echo $projectname . " Bugkiller"; ?></title>
-<link rel="stylesheet" href="<?php echo "$path"; ?>/style.css">
-</head>
-<body>
-<h1><?php echo $projectname . " Bugkiller"; ?></h1>
-<button class="bugkiller-button" onclick="window.location.href = '<?php echo "$path"; ?>/reportbug.php';"><span class="bugkiller-icon-mail"></span> Report a Bug</button>
-</body>
-</html>
