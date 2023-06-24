@@ -1,0 +1,95 @@
+<h1 id="installation">Installation</h1>
+<p><strong>These instructions are for Linux systems. If you use Windows,
+good luck finding out how to install Bugkiller.</strong></p>
+<h2 id="dependencies">Dependencies</h2>
+<h3 id="hard">Hard</h3>
+<p>Without these, Bugkiller won’t work.</p>
+<ul>
+<li>A properly configured Apache2 server</li>
+<li>PHP and its module for Apache, else you’ll see a plain text copy of
+the Bugkiller scripts</li>
+<li>MySQL or compatible, e.g. MariaDB or Percona Server <sup>(there are
+plans to support other database software in the future)</sup></li>
+<li>Git, for software download and updates</li>
+</ul>
+<h3 id="soft">Soft</h3>
+<p>These are some extras to make Bugkiller more powerful or secure.</p>
+<ul>
+<li><strong>RECOMMENDED: An Apache configuration to block access to
+<code>config.ini</code> in your Bugkiller root directory, else your
+database password will be leaked and your server will be
+vulnerable!</strong></li>
+</ul>
+<h2 id="install">Install</h2>
+<p><strong>Remember to become root using <code>sudo -i</code>,
+<code>sudo bash</code>, <code>sudo su</code>, or similar, as
+<code>/var/www</code> is only writable by the root and Apache
+users.</strong></p>
+<h3 id="download">Download</h3>
+<p>cd into your Apache content directory:</p>
+<pre><code>cd /var/www
+ls
+cd html # replace html with the name of the folder, if it isn&#39;t html</code></pre>
+<p>Then, clone the Bugkiller repository:</p>
+<pre><code>git clone https://github.com/TylerMS887/bugkiller --branch bugkiller-install/stable</code></pre>
+<p>Bugkiller will now be served at <code>/bugkiller</code> on your
+website.<br />
+You can move the folder’s contents to change where Bugkiller is, but it
+should be kept intact if you are going to set up fancy URLs (e.g.
+<code>bk/reportbug</code> instead of
+<code>bugkiller/reportbug.php</code>) after installation.</p>
+<h3 id="setup-sql">Setup SQL</h3>
+<p>Enter your SQL console, and run the following commands:</p>
+<pre><code>CREATE DATABASE bugkiller;
+CREATE USER &#39;bugkilleruser&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;my_awesome_password&#39;;
+GRANT ALL ON bugkiller.* TO &#39;bugkilleruser&#39;@&#39;localhost&#39; WITH GRANT OPTION;</code></pre>
+<p>Please note that you can’t link the root user to your Bugkiller
+instance, as this causes SQL authentication errors.</p>
+<h3 id="run-the-setup-script">Run the setup script</h3>
+<p>The setup script is a page served in the <code>bugkiller</code>
+folder to create and show a configuration file for Bugkiller. To find
+out where it is on the web, run:</p>
+<pre><code>echo &quot;http://$(ip addr | grep &#39;state UP&#39; -A2 | tail -n1 | awk &#39; {print $2}&#39; | cut -f1 -d&#39;/&#39;)/bugkiller/setup.php&quot;</code></pre>
+<p>An example output would be:</p>
+<pre><code>http://123.45.67.89/bugkiller/setup.php</code></pre>
+<p>If you get a “website is unreachable” error, access the page using a
+client to your server. For example, if your hosting server is a Chrome
+device (Chromebook, Chromebit, or Chromebase), you can access the setup
+program through the system’s Chrome (the local Crostini server is in
+most cases assigned to the <code>penguin.linux.test</code> domain on the
+<code>.test</code> special-use TLD - for custom containers, directly use
+the IP address).</p>
+<p>Enter the details of the server. This includes info about your
+database, the name of the project that is using Bugkiller, and if you
+want to allow Wikitext in bug descriptions. Bugkiller will process this
+info and show the text of the configuration file, generated using a
+highly accurate algorithm.</p>
+<p>You can then copy the configuration file to a new
+<code>config.ini</code> file in your Bugkiller installation
+directory.<br />
+When you save <code>config.ini</code>, you can then start accessing the
+bug tracker by changing <code>setup.php</code> in the URL to
+<code>index.php</code>, which will show the home page.</p>
+<h1 id="license-of-this-installation-guide">License of this installation
+guide</h1>
+<pre>MIT License
+
+Copyright (c) 2023 TylerMS887
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
