@@ -20,9 +20,10 @@
 
 $config = parse_ini_file("config.ini");
 $path = "//" . $config['path'];
+$projectname = $config['projectname'];
 echo '<div id="bugkiller-topbar">';
 echo "<span style='float: right'>Profile placeholder</span>";
-echo "<a href='$path' id='bugkiller-logo'>Bugkiller</a><span style='margin-right: 10px'></span>";
+echo "<a href='$path' id='bugkiller-logo'>$projectname</a><span style='margin-right: 10px'></span>";
 echo "<a href='$path/reportbug.php'>Report a Bug</a><span style='margin-right: 10px'></span>";
 
 // Move on to the rest of the UI using CSS
