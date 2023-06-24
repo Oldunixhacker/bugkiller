@@ -6,6 +6,7 @@ $dbname = "";
 $projectname = "";
 $wikitextallowed = false;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $path = $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']);
     $servername = $_POST['servername'];
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -23,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $config .= "dbname = \"$dbname\"\n";
     $config .= "projectname = \"$projectname\"\n";
     $config .= "wikitextallowed = $wikitextallowed\n";
+    $config .= "path = \"$path\";
     $fp = fopen("config.ini", "wb");
     if( $fp == false ){
         echo "Failed to write the configuration file. As a fallback, you can see the source code of the configuration file:";
