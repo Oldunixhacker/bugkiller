@@ -67,11 +67,11 @@ input[type="text"] {
   padding-left: 20px;
   padding-right: 20px;
   color: white;
-  vertical-align: center;
 }
 #bugkiller-topbar a {
   color: white;
   text-decoration: none;
+  vertical-align: center;
 }
 #bugkiller-topbar #bugkiller-logo {
   font-size: 1.5em;
