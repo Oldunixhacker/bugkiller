@@ -24,6 +24,7 @@ echo '<div id="bugkiller-topbar">';
 echo "<span style='float: right'>Profile placeholder</span>";
 echo "<b><a href='$path'>Bugkiller</a></b><span style='margin-right: 10px'></span>";
 echo "<a href='$path/reportbug.php'>Report a Bug</a><span style='margin-right: 10px'></span>";
+echo "<br><small>Let's smash those bugs!</small>";
 
 // Move on to the rest of the UI using CSS
 echo "</div><div id='bugkiller-ui'>";
