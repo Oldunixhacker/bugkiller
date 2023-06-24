@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/style.css">
 <?php
 require_once "topbar.php";
 require_once "configure.php";
@@ -16,4 +17,3 @@ if (!is_numeric($arg)) {
 }
 echo "Got $arg";
 ?>
-<link rel="stylesheet" href="/style.css">
