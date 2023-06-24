@@ -67,6 +67,7 @@ input[type="text"] {
   padding-left: 20px;
   padding-right: 20px;
   color: white;
+  font-size: 2em;
 }
 #bugkiller-topbar a {
   color: white;
