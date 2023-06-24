@@ -1,4 +1,5 @@
 <?php
+require_once "configure.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $searchq = $_POST["search"];
 } else {
@@ -9,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
   <title>Bug Search</title>
-  <link rel="stylesheet" href="/bugkiller/style.css">
+  <link rel="stylesheet" href='<?php echo "$path"; ?>/style.css'>
 </head>
 <body>
 
@@ -21,8 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </form>
 
   <?php
-  require_once "configure.php";
-
   // Connect to the database
   $conn = mysqli_connect($servername, $username, $password, $dbname);
 
