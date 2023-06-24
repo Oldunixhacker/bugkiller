@@ -43,9 +43,8 @@ if (!$conn->query($sql) === TRUE) {
 
 // Close connection
 $conn->close();
-};
+}
 echo "<span id=\"configpath\">Path defined in config.ini: $path</span>";
-echo "<noscript>id=\"js-disabled\">Bugkiller works best with JavaScript enabled.<br>Limited functionality is available when JavaScript is disabled, or not supported by your browser.</noscript>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
