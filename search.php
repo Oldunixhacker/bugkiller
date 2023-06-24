@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "</table>";
     } else {
       // Output a message if no results were found
-      echo "<p>Couldn't find any bugs that match \"$search\". You can <a href=\"/bugkiller/reportbug.php\">report a bug</a> with that name.</p>";
+      echo "<p>Couldn't find any bugs that match \"$search\". You can <a href=\"$path/reportbug.php\">report a bug</a> with that name.</p>";
     }
   }
 
