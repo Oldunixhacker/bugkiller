@@ -43,7 +43,6 @@ if (!$conn->query($sql) === TRUE) {
 
 // Close connection
 $conn->close();
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
