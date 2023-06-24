@@ -1,6 +1,5 @@
-__NOTOC__
-=Bugkiller=
-{{configure.php}}
+=__NOTOC__Bugkiller=
+
 Bugkiller is a PHP script that allows you to manage bug reports for your
 project. It uses a MySQL database.
 
