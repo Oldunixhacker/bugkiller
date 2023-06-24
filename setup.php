@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $config .= "dbname = \"$dbname\"\n";
     $config .= "projectname = \"$projectname\"\n";
     $config .= "wikitextallowed = $wikitextallowed\n";
-    $config .= "path = \"$path\";
+    $config .= "path = \"$path\"";
     echo "The resulting config.ini file is:";
     echo "<pre>";
     echo "$config";
