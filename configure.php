@@ -23,7 +23,12 @@ if ($password == "") {
   header("HTTP/1.1 503 Service Unavailable");
   echo "<strong>Note for users: $projectname is attempting to resolve a security issue related to this Bugkiller. Please wait until the site comes back online.</strong><br><br><strong>Note for the operator: For security reasons, it is no longer possible to use Bugkiller without a MySQL database password.</strong><br>Please alter the <code>$username</code> user to have a password.";
   exit;
-};
+}
+if ($password == "YES") {
+  header("HTTP/1.1 503 Service Unavailable");
+  echo "<strong>Note for users: $projectname is attempting to resolve a security issue related to this Bugkiller. Please wait until the site comes back online.</strong><br><br><strong>Note for the operator: For security reasons, it is not possible to use Bugkiller with a MySQL database password set to (the Y word, check your config). MySQL uses this in errors and this can lead to hackers thinking the password is the same as the Y word that, according to the Oxford English Dictionary, means to give an affirmative response.</strong><br>Please alter the <code>$username</code> user to have a more secure password.";
+  exit;
+}
 echo "<span id=\"configpath\">Path defined in config.ini: $path</span>";
 echo "<noscript id=\"js-disabled\">Bugkiller works best with a JavaScript-compatible browser if JavaScript is turned on.</noscript>";
 ?>
