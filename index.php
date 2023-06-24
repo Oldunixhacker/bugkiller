@@ -9,6 +9,8 @@
 //ini_set('display_startup_errors', 1);
 //error_reporting(E_ALL);
 
+require_once "configure.php";
+
 if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
     echo 'Couldn\'t find php mysqli. It is possible that your server wasn\'t configured correctly.';
     exit;
