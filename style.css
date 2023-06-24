@@ -36,3 +36,7 @@ input[type="text"] {
   font-size: 0;
   font-family: monospace;
 }
+.bugkiller-icon-mail:after {
+  font-family: wingdings;
+  content: "*";
+}
