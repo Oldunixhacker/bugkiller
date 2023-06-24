@@ -29,7 +29,7 @@ echo '<div id="bugkiller-topbar">';
 echo <<<endofhtml
 <form method="post" action="$path/search.php" style="float: right;">
     <input type="text" id="search" name="search" style="width: 300px;" value="" required="" placeholder="Search bugs...">
-    <button class="bugkiller-button" type="submit" action="search.php" method="post"><i class="fa-solid fa-search" title="Search"></i></button>
+    <button class="bugkiller-button" type="submit" action="search.php" method="post"><i class="fa-solid fa-search"></i> Go</button>
 </form>
 endofhtml;
 echo "<a href='$path' id='bugkiller-logo'>$projectname</a><span style='margin-right: 10px'></span>";
