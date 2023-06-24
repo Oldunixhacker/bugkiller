@@ -9,8 +9,6 @@
 //ini_set('display_startup_errors', 1);
 //error_reporting(E_ALL);
 
-require_once "configure.php";
-
 if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
     echo 'Couldn\'t find php mysqli. It is possible that your server wasn\'t configured correctly.';
     exit;
@@ -25,14 +23,8 @@ if (!file_exists('config.ini')) {
   exit;
 }
 
-// Get config values from file
-// Warning: Ensure this file is inaccessible from the web.
-$config = parse_ini_file("config.ini");
-$servername = $config['servername'];
-$username = $config['username'];
-$password = $config['password'];
-$dbname = $config['dbname'];
-$projectname = $config['projectname'];
+// Warning: Ensure config.ini is inaccessible from the web.
+require_once "configure.php";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
