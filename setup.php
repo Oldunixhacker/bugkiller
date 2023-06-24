@@ -60,7 +60,7 @@ if (file_exists('config.ini')) {
         <h1>Bugkiller Setup</h1>
         <p>Get Bugkiller up and running in a few clicks.</p>
         <form method="post">
-                <label for="path">Bugkiller web path: <input type="text" value='<?php echo "$path"; ?>' disabled></input> (unmodifiable from setup.php, edit your config.ini file to change this later, in case you get a new domain.)</label>
+                <label for="path">Bugkiller web path: <input type="text" value='<?php echo "$path"; ?>' readonly></input> (unmodifiable from setup.php, edit your config.ini file to change this later, in case you get a new domain.)</label>
                 <span id="path"><!--dummy--></span><br><br>
                 
                 <label for="servername">Server name:</label>
