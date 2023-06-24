@@ -21,6 +21,6 @@
 $config = parse_ini_file("config.ini");
 $path = "//" . $config['path'];
 echo '<div id="bugkiller-topbar">';
-echo "<span style="float: right">Profile placeholder</span>";
+echo "<span style='float: right'>Profile placeholder</span>";
 echo "<b><a href='$path'>Bugkiller</a></b><span style='margin-right: 10px'></span>";
 echo "<a href='$path/reportbug.php'>Report a Bug</a><span style='margin-right: 10px'></span>";
