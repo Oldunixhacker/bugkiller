@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Check connection
   if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    die("Search is impossible due to database connection error. " . mysqli_connect_error() . ".");
   }
 
   // Check if the form has been submitted
@@ -49,10 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if ($resultcount == 1) {
         echo "One result found.";
       } else {
-        echo "$resultcount results found.";
+        echo "<p>$resultcount results found.</p>";
       }
       while ($row = mysqli_fetch_assoc($result)) {
-        echo "<a href=\"" . $path . "/view.php/" . $row["id"] . "\">" . $row["bug_name"] . "</a><br><span class=\"search-result-description\">" . substr($row["bug_description"], 0, 10) . "</span>";
+        echo "<a style=\"font-size: 2em;\" href=\"" . $path . "/view.php/" . $row["id"] . "\">" . $row["bug_name"] . "</a><br><span class=\"search-result-description\">" . substr($row["bug_description"], 0, 10) . "</span>";
       }
     } else {
       // Output a message if no results were found
