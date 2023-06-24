@@ -29,10 +29,9 @@ echo '<div id="bugkiller-topbar">';
 echo <<<endofhtml
 <form method="post" action="/search.php" style="float: right;">
     <input type="text" id="search" name="search" style="width: 300px;" value="" required="" placeholder="Search bugs...">
-    <button type="submit" action="search.php" method="post"><i class="fa-solid fa-search"></i></button>
+    <button class="bugkiller-button" type="submit" action="search.php" method="post"><i class="fa-solid fa-search"></i></button>
 </form>
 endofhtml;
-echo "<span style='float: right'>Profile placeholder</span>";
 echo "<a href='$path' id='bugkiller-logo'>$projectname</a><span style='margin-right: 10px'></span>";
 echo "<a href='$path/reportbug.php'>Report a Bug</a><span style='margin-right: 10px'></span>";
 
