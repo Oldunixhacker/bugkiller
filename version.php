@@ -33,19 +33,19 @@ SOFTWARE.
 echo '<table>';
 echo '<thead><tr><th>Software</th><th>Version</th></tr></thead>';
 echo '<tbody>';
-
+// Bugkiller
 echo '<tr><td><a href="https://github.com/TylerMS887/bugkiller">Bugkiller</a></td><td>' . $bugkiller_version . '</td></tr>';
-
+// PHP
 echo '<tr><td><a href="https://php.net">PHP</a></td><td>' . phpversion() . '</td></tr>';
-
+// MySQL
 $mysql_version = shell_exec('mysql -V');
 preg_match('@[0-9]+\.[0-9]+\.[0-9]+@', $mysql_version, $version);
 echo '<tr><td><a href="https://mysql.com">MySQL</a></td><td>' . $version[0] . '</td></tr>';
-
+// Apache HTTP Server
 $apache_version = apache_get_version();
 preg_match('@[0-9]+\.[0-9]+\.[0-9]+@', $apache_version, $version);
-echo '<tr><td><a href="https://httpd.apache.org">Apache</a></td><td>' . $version[0] . '</td></tr>';
-
+echo '<tr><td><a href="https://httpd.apache.org">Apache HTTP Server</a></td><td>' . $version[0] . '</td></tr>';
+// Composer
 require 'vendor/autoload.php';
 use Composer\InstalledVersions;
 $composer_version = InstalledVersions::getPrettyVersion('composer/composer');
