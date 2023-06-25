@@ -1,5 +1,5 @@
 <?php
-require "vendor/autoload.php";
+require "./vendor/autoload.php";
 require_once "topbar.php";
 require_once "configure.php";
 ?>
@@ -45,17 +45,13 @@ echo '<tr><td><a href="https://mysql.com">MySQL</a></td><td>' . $version[0] . '<
 $apache_version = apache_get_version();
 preg_match('@[0-9]+\.[0-9]+\.[0-9]+@', $apache_version, $version);
 echo '<tr><td><a href="https://httpd.apache.org">Apache HTTP Server</a></td><td>' . $version[0] . '</td></tr>';
-// Composer
-include 'vendor/autoload.php';
-use Composer\InstalledVersions;
-$composer_version = InstalledVersions::getPrettyVersion('composer/composer');
-echo '<tr><td><a href="https://getcomposer.org">Composer</a></td><td>' . $composer_version . '</td></tr>';
 
 echo '</tbody>';
 echo '</table>';
 ?>
 <h1>Composer packages</h1>
 <?php
+use Composer\InstalledVersions;
 $packages = [];
 foreach (InstalledVersions::getAllInstalledPackages() as $package) {
     $packages[] = [
