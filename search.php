@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <h1>Bug Search</h1>
 
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <input type="text" id="search" name="search" style="width: 300px;" value='<?php echo "$searchq" ?>' required>
+    <input type="text" id="search" name="search" style="width: 300px;" value='<?php echo "$searchq" ?>' autocomplete="off">
     <input type="submit" value="Search" class="bugkiller-button">
   </form>
 
@@ -36,6 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the search term from the form
     $search = mysqli_real_escape_string($conn, $_POST["search"]);
 
+    // Ensure that the user provided a search query to Bugkiller
+    if ($search == "") {
+      echo "<p>Search query is empty.</p>";
+    }
+    
     // Prepare the SQL statement
     $sql = "SELECT * FROM bugs WHERE bug_name LIKE '%$search%' OR bug_description LIKE '%$search%'";
 
