@@ -37,7 +37,7 @@ if ($bug) {
     echo '</code></pre>';
     if ($status == "Closed") {
       echo "<b>This bug report has been closed. No new comments are accepted.</b>";
-    } elseif (priority == "Needs Triage") {
+    } elseif ($priority == "Needs Triage") {
       echo "<b>This bug report has no priority, and is waiting for triage.</b>";
     } else {
       echo "<b>This bug report has been ranked with the following priority: " . $priority . "</b>";
