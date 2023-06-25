@@ -34,7 +34,7 @@ echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-a
 echo '<div id="bugkiller-topbar">';
 echo <<<endofhtml
 <form method="post" action="$path/search.php" style="float: right;">
-    <input type="text" id="barsearch" name="search" style="width: 300px;" value="" required="" placeholder="Search bugs...">
+    <input type="text" id="barsearch" name="search" style="width: 300px;" value="" placeholder="Search bugs...">
     <button class="bugkiller-button" type="submit" action="search.php" method="post"><i class="fa-solid fa-search"></i></button>
 </form>
 endofhtml;
