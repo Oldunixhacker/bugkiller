@@ -18,13 +18,19 @@
 // |                                                                 |
 // \-----------------------------------------------------------------/
 
+if (PHP_SAPI === 'cli') {
+   echo "Please run this script on the web.";
+   exit;
+}
+
 $config = parse_ini_file("config.ini");
 $path = "//" . $config['path'];
 $projectname = $config['projectname'];
 
-// Font Awesome icon
+// Use search icon from Font Awesome
 echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">';
 
+// Echo out the toolbar
 echo '<div id="bugkiller-topbar">';
 echo <<<endofhtml
 <form method="post" action="$path/search.php" style="float: right;">
