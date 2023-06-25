@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<p>$resultcount results found.</p>";
       }
       while ($row = mysqli_fetch_assoc($result)) {
-        echo "<a style=\"font-size: 2em;\" href=\"" . $path . "/view.php/" . $row["id"] . "\">" . $row["bug_name"] . "</a><span style=\"font-size: 0.2em; opacity: 0.5; font-family: monospace\">Bug #" . $row["id"] . "</span><br><span class=\"search-result-description\">" . substr($row["bug_description"], 0, 55) . "</span><br><br>";
+        echo "<a style=\"font-size: 2em;\" href=\"" . $path . "/view.php/" . $row["id"] . "\">" . $row["bug_name"] . "</a><span style=\"font-size: 0.2em; opacity: 70%; font-family: monospace\">Bug #" . $row["id"] . "</span><br><span class=\"search-result-description\">" . substr($row["bug_description"], 0, 55) . "</span><br><br>";
       }
       echo "<p>You can <a href=\"$path/reportbug.php\">report a bug</a> if these search results did not help.</p>";
     } else {
