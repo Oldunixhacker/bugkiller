@@ -19,7 +19,7 @@
 // \-----------------------------------------------------------------/
 
 if (PHP_SAPI === 'cli') {
-   echo "Please run this script on the web.";
+   echo "Please run this script on the web.\n";
    exit;
 }
 
