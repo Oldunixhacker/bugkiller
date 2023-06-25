@@ -31,6 +31,7 @@ if ($bug) {
     $bug_description = htmlspecialchars($bug['bug_description']);
     $status = htmlspecialchars($bug['status']);
     $priority = htmlspecialchars($bug['priority']);
+    echo '<title>' . '#' . $id . ": " . $bug_name . ' - ' . $projectname;
     echo '<h1>' . $bug_name . '</h1>';
     echo '<pre><code>';
     echo $bug_description;
