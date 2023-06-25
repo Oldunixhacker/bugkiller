@@ -52,9 +52,8 @@ echo '</table>';
 ?>
 <h1>Composer packages</h1>
 <?php
-use Composer\InstalledVersions;
 $packages = [];
-foreach (InstalledVersions::getAllInstalledPackages() as $package) {
+foreach (\Composer\InstalledVersions::getAllRawData() as $package) {
     $packages[] = [
         'name' => $package->getName(),
         'description' => $package->getDescription(),
