@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="/style.css">
 <?php
+require "vendor/autoload.php";
 require_once "topbar.php";
 require_once "configure.php";
+$iswiki = $config['wwallowed'];
 $url = $_SERVER['REQUEST_URI'];
 $path = parse_url($url, PHP_URL_PATH);
 $segments = explode('/', $path);
@@ -33,9 +35,17 @@ if ($bug) {
     $priority = htmlspecialchars($bug['priority']);
     echo '<title>' . '#' . $id . ": " . $bug_name . ' - ' . $projectname . ' Bugkiller</title>';
     echo '<h1>' . $bug_name . '</h1>';
-    echo '<pre><code>';
-    echo $bug_description;
-    echo '</code></pre>';
+    if ($iswiki) {
+      $htmlDescription = (new WikitextParser())
+        ->setWikitext($bug_description)
+        ->setFormat(Format::HTML)
+        ->parse();
+      echo $htmlDescription;
+    } else {
+      echo '<pre><code>';
+      echo $bug_description;
+      echo '</code></pre>';
+    }
     if ($status == "Closed") {
       echo "<b>This bug report has been closed. No new comments are accepted.</b>";
     } elseif ($priority == "Needs Triage") {
@@ -46,6 +56,7 @@ if ($bug) {
 } else {
     echo 'Bug not found.<br>';
     echo '<a href="#barsearch">Search for existing bugs</a>.';
+    header("HTTP/1.1 404 Not Found");
     exit;
 }
 $stmt->close();

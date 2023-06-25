@@ -1,0 +1,19 @@
+{
+    "name": "bugkiller/bugkiller",
+    "description": "Simple bug tracker for the web",
+    "type": "project",
+    "require": {
+        "divineomega/php-wikitext-parser": "^1.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Bugkiller\\Bugkiller\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TylerMS887 and Bugkiller contributors"
+        }
+    ]
+}

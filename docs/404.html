@@ -8,6 +8,7 @@ good luck finding out how to install Bugkiller.</strong></p>
 <li>A properly configured Apache2 server</li>
 <li>PHP and its module for Apache, else you’ll see a plain text copy of
 the Bugkiller scripts</li>
+<li>Composer package manager</li>
 <li>MySQL or compatible, e.g. MariaDB or Percona Server <sup>(there are
 plans to support other database software in the future)</sup></li>
 <li>Git, for software download and updates</li>
@@ -31,7 +32,9 @@ users.</strong></p>
 ls
 cd html # replace html with the name of the folder, if it isn&#39;t html</code></pre>
 <p>Then, clone the Bugkiller repository:</p>
-<pre><code>git clone https://github.com/TylerMS887/bugkiller --branch bugkiller-install/stable</code></pre>
+<pre><code>git clone https://github.com/TylerMS887/bugkiller --branch bugkiller-install/stable
+composer install --working-dir bugkiller
+</code></pre>
 <p>Bugkiller will now be served at <code>/bugkiller</code> on your
 website.<br />
 You can move the folder’s contents to change where Bugkiller is, but it

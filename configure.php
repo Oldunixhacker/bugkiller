@@ -1,7 +1,8 @@
 <?php
 // Script to auto-configure your bugkiller pages.
-// Do not modify this file - if you want to edit your bugkiller configuration,
-// edit config.ini which contains your config values.
+// For end-users: Do not modify this file.
+// If you want to edit your bugkiller configuration, edit
+// config.ini which contains your config values.
 function isSecure() {
   return
     (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
