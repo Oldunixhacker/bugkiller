@@ -15,7 +15,6 @@ if (!is_numeric($arg)) {
   header("HTTP/1.1 400 Bad Request");
   exit;
 }
-<?php
 $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 if ($mysqli->connect_errno) {
     echo 'Failed to connect to the Bugkiller database: ' . $mysqli->connect_error;
