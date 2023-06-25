@@ -46,7 +46,7 @@ $apache_version = apache_get_version();
 preg_match('@[0-9]+\.[0-9]+\.[0-9]+@', $apache_version, $version);
 echo '<tr><td><a href="https://httpd.apache.org">Apache HTTP Server</a></td><td>' . $version[0] . '</td></tr>';
 // Composer
-require 'vendor/autoload.php';
+include 'vendor/autoload.php';
 use Composer\InstalledVersions;
 $composer_version = InstalledVersions::getPrettyVersion('composer/composer');
 echo '<tr><td><a href="https://getcomposer.org">Composer</a></td><td>' . $composer_version . '</td></tr>';

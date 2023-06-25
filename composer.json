@@ -8,7 +8,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Bugkiller\\Bugkiller\\": "src/"
+            "Bugkiller\\Bugkiller\\": ""
         }
     },
     "authors": [
