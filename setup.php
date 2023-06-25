@@ -89,7 +89,7 @@ if (file_exists('config.ini')) {
                 <?php if ($wikitextallowed == true) {echo '<input type="checkbox" id="wwallowed" name="wwallowed" value="true" checked>';} else {echo '<input type="checkbox" id="wwallowed" name="wwallowed" value="true">';} ?>
                 <label for="wwallowed"> Allow Wikitext formatting in bug descriptions</label><br><br>
                 <input type="checkbox" id="setupallowed" name="setupallowed" value="true" checked>
-                <label for="wwallowed"> Allow further use of this script instead of manually editing config.ini</label><br><br>
+                <label for="setupallowed"> Allow further use of this script instead of manually editing config.ini</label><br><br>
 
                 <p>After filling out the form above, you can apply the configuration.</p>
                 <input type="submit" value="Configure">
