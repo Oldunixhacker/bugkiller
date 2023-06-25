@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <p>Please note that <?php echo $projectname . " Bugkiller"; ?> only allows bug reports about <?php echo $projectname ?>.</p>
 <form method="post">
         <input type="text" id="title" name="title" placeholder="Title"><br><br>
-        <textarea id="description" name="description" placeholder="Description"></textarea><br><br><label for="status"><b>Status</b><br><small>It is highly recommended to leave this as Needs Triage. B.G.M.B. is only suitable for very large bugs, like ones that occur when opening any page or signing in.</small></label><br><br><select id="status" name="status">
+        <textarea id="description" name="description" placeholder="Description"></textarea><br><br><label for="status"><b>Priority</b><br><small>It is highly recommended to leave this as Needs Triage. B.G.M.B. is only suitable for very large bugs, like ones that occur when opening any page or signing in.</small></label><br><br><select id="status" name="status">
         <option value="Needs Triage">Needs Triage</option>
         <option value="B.G.M.B.">B.G.M.B. (Big Giant Monster Bug)</option>
         <option value="High">High</option>
