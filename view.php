@@ -9,7 +9,8 @@ $path = parse_url($url, PHP_URL_PATH);
 $segments = explode('/', $path);
 $arg = utf8_decode(urldecode($segments[2]));
 if ($arg == "") {
-  header("Location: $pathwithhttp/search.php");
+  header("HTTP/1.1 400 Bad Request");
+  echo "<p><b>Bad bug identifier:</b> No bug ID provided.</p>";
   exit;
 }
 if (!is_numeric($arg)) {

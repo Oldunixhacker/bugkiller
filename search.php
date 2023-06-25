@@ -4,23 +4,20 @@ require_once "configure.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $searchq = $_POST["search"];
 } else {
-  $searchq = "";
+  echo "A search query is required.";
+  header("HTTP/1.1 400 Bad Request");
+  exit;
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bug Search</title>
+  <title>Search results for "<?php echo $searchq ?>" - <?php echo $projectname ?></title>
   <link rel="stylesheet" href='<?php echo "$path"; ?>/style.css'>
 </head>
 <body>
 
-  <h1>Bug Search</h1>
-
-  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <input type="text" id="search" name="search" style="width: 300px;" value='<?php echo "$searchq" ?>' autocomplete="off">
-    <input type="submit" value="Search" class="bugkiller-button">
-  </form>
+  <h1>Search results for "<?php echo $searchq ?>"</h1>
 
   <?php
   // Connect to the database
