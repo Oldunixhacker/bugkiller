@@ -33,13 +33,13 @@ echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-a
 // Echo out the toolbar
 echo '<div id="bugkiller-topbar">';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $searchq = $_POST["search"];
+    $searchb = $_POST["search"];
 } else {
-    $searchq = "";
+    $searchb = "";
 }
 echo <<<endofhtml
 <form method="post" action="$path/search.php" style="float: right;">
-    <input type="text" id="barsearch" name="search" style="width: 300px;" value="" placeholder="Search bugs..." value="$searchq">
+    <input type="text" id="barsearch" name="search" style="width: 300px;" value="" placeholder="Search bugs..." value="$searchb">
     <button class="bugkiller-button" type="submit" action="search.php" method="post"><i class="fa-solid fa-search"></i></button>
 </form>
 endofhtml;
