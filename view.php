@@ -54,6 +54,8 @@ if ($bug) {
     } else {
       echo "<b>This bug report has been ranked with the following priority: " . $priority . "</b>";
     }
+    echo "<h2>Comments</h2>";
+    echo "<h3>New Comment</h3>";
 } else {
     echo 'Bug not found.<br>';
     echo '<a href="#barsearch">Search for existing bugs</a>.';

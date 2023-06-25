@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "Something went wrong. Try again. " . mysqli_error($conn);
     }
   }
-  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
