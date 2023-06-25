@@ -32,7 +32,7 @@ echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-a
 
 // Echo out the toolbar
 echo '<div id="bugkiller-topbar">';
-if ($_SERVER["REQUEST_METHOD"] == "POST" and $_POST["search"]) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $searchq = $_POST["search"];
 } else {
     $searchq = "";
