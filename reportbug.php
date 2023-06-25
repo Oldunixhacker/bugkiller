@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       header("Location: $path");
       exit;
     } else {
-      echo "Something went wrong. Try again. " . mysqli_error();
+      echo "Something went wrong. Try again. " . mysqli_error($conn);
     }
   }
   }
