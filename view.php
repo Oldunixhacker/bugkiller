@@ -3,7 +3,7 @@
 require "./vendor/autoload.php";
 require_once "topbar.php";
 require_once "configure.php";
-$iswiki = $config['wwallowed'];
+$iswiki = $config['wikitextallowed'];
 $url = $_SERVER['REQUEST_URI'];
 $path = parse_url($url, PHP_URL_PATH);
 $segments = explode('/', $path);

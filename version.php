@@ -51,28 +51,3 @@ echo '</tbody>';
 echo '</table>';
 ?>
 <h1>Composer packages</h1>
-<?php
-$packages = [];
-foreach (\Composer\InstalledVersions::getAllRawData() as $package) {
-    $packages[] = [
-        'name' => $package->getName(),
-        'description' => $package->getDescription(),
-        'version' => $package->getPrettyVersion(),
-        'license' => implode(', ', $package->getLicense()),
-    ];
-}
-
-echo '<table>';
-echo '<thead><tr><th>Name</th><th>Description</th><th>Version</th><th>License</th></tr></thead>';
-echo '<tbody>';
-foreach ($packages as $package) {
-    echo '<tr>';
-    echo '<td>' . $package['name'] . '</td>';
-    echo '<td>' . $package['description'] . '</td>';
-    echo '<td>' . $package['version'] . '</td>';
-    echo '<td>' . $package['license'] . '</td>';
-    echo '</tr>';
-}
-echo '</tbody>';
-echo '</table>';
-?>
