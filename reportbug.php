@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $conn = new mysqli($servername, $username, $password, $dbname);
   $title = $_POST["title"];
   $description = $_POST["description"];
+  $description = $mysqli->real_escape_string($description);
   $priority = $_POST["status"];
   $skipcreate = false;
   if ($title == "" and $description == "") {
