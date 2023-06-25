@@ -36,7 +36,7 @@ if ($bug) {
     echo '<title>' . '#' . $id . ": " . $bug_name . ' - ' . $projectname . ' Bugkiller</title>';
     echo '<h1>' . $bug_name . '</h1>';
     if ($iswiki) {
-      $htmlDescription = (new WikitextParser())
+      $htmlDescription = (new Parser())
         ->setWikitext($bug_description)
         ->setFormat(Format::HTML)
         ->parse();
