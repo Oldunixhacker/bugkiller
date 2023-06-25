@@ -49,15 +49,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if any results were found
     if (mysqli_num_rows($result) > 0) {
-      // Output the results in a table
+      // Display Google-styled results
       $resultcount = mysqli_num_rows($result);
       if ($resultcount == 1) {
-        echo "<p>One result found.</p>";
+        echo "<p>1 result found.</p>";
       } else {
         echo "<p>$resultcount results found.</p>";
       }
       while ($row = mysqli_fetch_assoc($result)) {
-        echo "<a style=\"font-size: 2em;\" href=\"" . $path . "/view.php/" . $row["id"] . "\">" . $row["bug_name"] . "</a><br><span class=\"search-result-description\">" . substr($row["bug_description"], 0, 55) . "</span><br><br>";
+        echo "<a style=\"font-size: 2em;\" href=\"" . $path . "/view.php/" . $row["id"] . "\">" . $row["bug_name"] . "</a><span style=\"font-size: 0.2em; opacity: 0.5; font-family: monospace\">Bug #" . $row["id"] . "</span><br><span class=\"search-result-description\">" . substr($row["bug_description"], 0, 55) . "</span><br><br>";
       }
       echo "<p>You can <a href=\"$path/reportbug.php\">report a bug</a> if these search results did not help.</p>";
     } else {
