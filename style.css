@@ -61,11 +61,12 @@ input[type="text"] {
   background-color: red;
   font-weight: 700;
   text-align: center;
-  padding: 10px;
   border-radius: 10px;
   color: white;
-  float: right;
-  margin: 10px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 #bugkiller-topbar {
   top: 0;
