@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($skipcreate == false) {
     $sql = "INSERT INTO bugs (bug_name, bug_description, status, priority) VALUES ('$title', '$description', 'Open', '$priority')";
     if (mysqli_query($conn, $sql)) {
-      header("Location: /bugkiller");
+      header("Location: $path");
       exit;
     } else {
       echo "Something went wrong. Try again. " . mysqli_error();
