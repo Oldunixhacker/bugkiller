@@ -15,21 +15,38 @@ if (!is_numeric($arg)) {
   header("HTTP/1.1 400 Bad Request");
   exit;
 }
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  echo "Unable to view bug: " . $conn->connect_error;
-  exit;
+<?php
+$mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+if ($mysqli->connect_errno) {
+    echo 'Failed to connect to the Bugkiller database: ' . $mysqli->connect_error;
+    exit;
 }
-
-$stmt = $pdo->prepare('SELECT bug_title, bug_description FROM bugs WHERE id = :id');
-$stmt->execute(['id' => $arg]);
-$bug = $stmt->fetch();
+$stmt = $mysqli->prepare('SELECT id, bug_name, bug_description, status, priority FROM bugs WHERE id = ?');
+$stmt->bind_param('i', $arg);
+$stmt->execute();
+$result = $stmt->get_result();
+$bug = $result->fetch_assoc();
 if ($bug) {
-    echo '<h1>' . htmlspecialchars($bug['bug_title']) . '</h1>';
-    echo '<pre><code>' . htmlspecialchars($bug['bug_description']) . '</code></pre>';
+    $id = htmlspecialchars($bug['id']);
+    $bug_name = htmlspecialchars($bug['bug_name']);
+    $bug_description = htmlspecialchars($bug['bug_description']);
+    $status = htmlspecialchars($bug['status']);
+    $priority = htmlspecialchars($bug['priority']);
+    echo '<h1>' . $bug_name . '</h1>';
+    echo '<pre><code>';
+    echo $bug_description;
+    echo '</code></pre>';
+    if ($status == "Closed") {
+      echo "<b>This bug report has been closed. No new comments are accepted.</b>";
+    } elseif (priority == "Needs Triage") {
+      echo "<b>This bug report has no priority, and is waiting for triage.</b>";
+    } else {
+      echo "<b>This bug report has been ranked with the following priority: " . $priority . "</b>";
+    }
 } else {
-    echo "There is no bug with the ID provided.";
+    echo 'Bug not found.<br>';
+    echo '<a href="#barsearch">Search for existing bugs</a>.';
+    exit;
 }
-?>
+$stmt->close();
+$mysqli->close();
