@@ -38,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Ensure that the user provided a search query to Bugkiller
     if ($search == "") {
-      echo "<p>Search query is empty.</p>";
       exit;
     }
     
