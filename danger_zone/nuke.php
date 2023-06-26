@@ -1,19 +1,27 @@
 <link rel="stylesheet" href="/style.css">
 <?php
-require_once "../topbar.php";
-require_once "../configure.php";
-
+header("Content-Type: text/plain");
+echo "BUGKILLER NUKE TOOL - ATTEMPTING TO PERFORM A NUKE!\n";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if ($_POST['password'] != $password) {
+    echo "Incorrect password.";
+    header("HTTP/1.1 401 Unauthorized");
+    exit;
+  }
   $conn = new mysqli($servername, $username, $password, $dbname);
   $sql = "DROP TABLE bugs;\n";
   $sql .= "DROP TABLE comments;";
   if (mysqli_query($conn, $sql)) {
+      echo "Done, redirecting soon...";
       header("Location: $path");
-      exit;
   } else {
-      echo "Something went wrong. Try again. " . mysqli_error($conn);
+      echo "Something went wrong. Try again.\nThis is the error message:\n" . mysqli_error($conn);
   }
+  exit;
 }
+
+require_once "../topbar.php";
+require_once "../configure.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
