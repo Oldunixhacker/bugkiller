@@ -43,7 +43,7 @@ if ($bug) {
         ->parse();
       echo $htmlDescription;
     } else {
-      echo '<pre><code>';
+      echo '<pre class="user-generated-content"><code class="user-generated-content">';
       echo $bug_description;
       echo '</code></pre>';
     }
