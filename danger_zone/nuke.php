@@ -10,13 +10,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit;
   }
   $conn = new mysqli($servername, $username, $password, $dbname);
-  $sql = "DROP TABLE bugs;\n";
+  $sql = "DROP TABLE bugs;";
+  if (mysqli_query($conn, $sql)) {
+      echo "\nFinished removing bugs table";
+  } else {
+      echo "Something went wrong. Reload the page.\nThis is the error message:\n" . mysqli_error($conn);
+      exit;
+  }
   $sql .= "DROP TABLE comments;";
   if (mysqli_query($conn, $sql)) {
       echo "Done, redirecting soon...";
       header("Location: $path");
   } else {
-      echo "Something went wrong. Try again.\nThis is the error message:\n" . mysqli_error($conn);
+      echo "Something went wrong. Reload the page.\nThis is the error message:\n" . mysqli_error($conn);
   }
   exit;
 }
