@@ -56,6 +56,9 @@ if ($bug) {
     }
     echo "<h2>Comments</h2>";
     echo "<h3>New Comment</h3>";
+    echo "<form action=\"$path/comment.php\" method=\"post\">";
+    echo '<textarea id="description" name="description" placeholder="Description"></textarea>';
+    echo '</form>';
 } else {
     echo 'Bug not found.<br>';
     echo '<a href="#barsearch">Search for existing bugs</a>.';
