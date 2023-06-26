@@ -18,6 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($wikitextallowed == "") {
         $wikitextallowed = "false";
     }
+    if ($setupallowed == "") {
+        $setupallowed = "false";
+    }
 
     // Write the config values to the config.ini file
     $config = "servername = \"$servername\"\n";
