@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/style.css">
 <?php
 require_once "../topbar.php";
 require_once "../configure.php";
@@ -31,6 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <form method="post">
 <label for="password">MySQL user password:</label>
 <input type="password" name="password"><br><br>
-<input type="submit" value="Nuke">
+<input type="submit" value="Nuke" class="bugkiller-button">
 </form>
 </html>
