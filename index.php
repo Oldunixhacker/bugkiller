@@ -50,7 +50,7 @@ $conn->close();
 <html lang="en">
 <head>
 <title><?php echo $projectname . " Bugkiller"; ?></title>
-<link rel="stylesheet" href="<?php echo "$path"; ?>/style.css">
+<link rel="stylesheet" href="<?php echo "$pathwithhttp"; ?>/style.css">
 </head>
 <body>
 <h1><?php echo $projectname . " Bugkiller"; ?></h1>
