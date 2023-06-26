@@ -3,6 +3,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   echo "BUGKILLER NUKE TOOL - ATTEMPTING TO PERFORM A NUKE!\n";
   header("Content-Type: text/plain");
+  require_once "../configure.php";
   if ($_POST['password'] != $password) {
     echo "Incorrect password.";
     header("HTTP/1.1 401 Unauthorized");
