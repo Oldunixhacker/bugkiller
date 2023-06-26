@@ -36,7 +36,7 @@ if ($conn->connect_error) {
 }
 
 // Create table for bugs
-$sql = "CREATE TABLE IF NOT EXISTS bugs (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, bug_name VARCHAR(100) NOT NULL, bug_description VARCHAR(16383) NOT NULL, status VARCHAR(30) NOT NULL, priority VARCHAR(30) NOT NULL, date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);";
+$sql = "CREATE TABLE IF NOT EXISTS bugs (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, bug_name VARCHAR(100) NOT NULL, bug_description TEXT(10000000) NOT NULL, status VARCHAR(30) NOT NULL, priority VARCHAR(30) NOT NULL, date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);";
 
 if (!$conn->query($sql) === TRUE) {
   echo "Error preparing the Bugkiller database.<br>" . $conn->error;
