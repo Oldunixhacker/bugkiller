@@ -1,6 +1,6 @@
 <?php
-require_once "topbar.php";
-require_once "configure.php";
+require_once "../topbar.php";
+require_once "../configure.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $conn = new mysqli($servername, $username, $password, $dbname);
