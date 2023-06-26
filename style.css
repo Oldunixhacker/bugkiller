@@ -105,6 +105,6 @@ input[type="text"] {
   font-size: 0.8em;
   font-style: italic;
 }
-pre.user-generated-content {
+pre.user-generated-content, code.user-generated-content {
   font-family: sans-serif;
 }
