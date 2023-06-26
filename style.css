@@ -3,9 +3,9 @@ body {
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
+  font-family: sans-serif;
 }
 #bugkiller-ui {
-  font-family: sans-serif;
   padding: 10px;
 }
 a {
@@ -104,4 +104,7 @@ input[type="text"] {
   opacity: 70%;
   font-size: 0.8em;
   font-style: italic;
+}
+pre.user-generated-content {
+  font-family: sans-serif;
 }
