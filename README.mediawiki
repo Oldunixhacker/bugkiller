@@ -20,7 +20,7 @@ WAMP software is untested.
 
 ==Why Bugkiller?==
 
-Bug tracker graveyard is very large and filled with bug trackers.
+I haven't found any free alternative to discontinued bug trackers.
 GitHub Issues is alive but is only available for GitHub.
 You can only install Phorge to a whole domain.
 
