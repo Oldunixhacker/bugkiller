@@ -4,6 +4,7 @@
 // If you want to edit your bugkiller configuration, edit
 // config.ini which contains your config values.
 $bugkiller_version = "0.1";
+$IP = getcwd();
 function isSecure() {
   return
     (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
