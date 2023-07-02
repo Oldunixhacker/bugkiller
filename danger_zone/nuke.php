@@ -35,7 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   exit;
 }
 
-require_once "../topbar.php";
 require_once "../configure.php";
 
 $IP = dirname($IP);
@@ -44,7 +43,6 @@ $IP = dirname($IP);
 <html lang="en">
 <head>
 <title>Nuke - <?php echo $projectname . " Bugkiller"; ?></title>
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1>Nuke this bug tracker</h1>
