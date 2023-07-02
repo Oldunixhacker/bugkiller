@@ -37,7 +37,6 @@ class Captcha {
         }
         // Make the image harder to read by bots.
       	for ($i = 0; $i < 55000; $i++) {
-		  $dot_color = imagecolorallo
                   $x = rand(0, $width);
                   $y = rand(0, $height);
                   imagesetpixel($image, $x, $y, $dot_color);
