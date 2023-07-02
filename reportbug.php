@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 <title>Report a Bug - <?php echo $projectname . " Bugkiller"; ?></title>
 <link rel="stylesheet" href="style.css">
+<script src="reportbug.js">
 </head>
 <body>
 <h1>Report a Bug</h1>
