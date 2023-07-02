@@ -12,6 +12,7 @@
 // Requires the GD library.                                     //
 //////////////////////////////////////////////////////////////////
 
+$IP = __dir__;
 session_start();
 class Captcha {
     public function generateCaptcha($width = 620, $height = 120, $characters = 14) {
