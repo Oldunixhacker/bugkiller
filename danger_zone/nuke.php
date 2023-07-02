@@ -5,8 +5,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   header("Content-Type: text/plain");
   require_once "../configure.php";
   if (isMobile()) {
-	echo "You can only nuke from a desktop to prevent hoax nukes.";
+	echo "\n\n\n\nYou can only nuke from a desktop to prevent hoax nukes.";
 	header("HTTP/1.1 403 Forbidden");
+	exit;
   }
   echo "\n\n";
   $IP = dirname($IP);
