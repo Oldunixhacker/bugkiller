@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </select><br><br>
         <input type="checkbox" name="searched" id="searched" required>
         <label for="searched"> I confirm that I have <a href="#barsearch">searched for existing bugs</a>.</label><br><br>
-        <label for="captcha">To verify you are not a spambot, we need you to enter the text shown in the image below (<a href="<?php echo $path ?>/captcha.php">help</a>):<br><img src="<?php echo $path ?>/captcha.gif" title="CAPTCHA" alt="CAPTCHA"><br><br></label>
+        <label for="captcha">To verify you are not a spambot, we need you to enter the text shown in the image below (<a href="<?php echo $path ?>/captcha.php">help</a>):<br><img src="<?php echo $path ?>/captcha.gif.php" title="CAPTCHA" alt="CAPTCHA"><br><br></label>
         <input type="text" placeholder="CAPTCHA test" name="captcha" id="captcha"><br>
         <input type="submit" value="Report" class="bugkiller-button">
         </form>
