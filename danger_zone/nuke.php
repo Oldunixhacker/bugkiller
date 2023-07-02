@@ -56,7 +56,7 @@ $IP = dirname($IP);
 <label for="password">MySQL user password:</label>
 <input type="password" name="password"><br><br>
 <label for="captcha">Enter the letters you see in the image below:</label><br>
-<img src="<?php echo $path ?>/danger_zome/captcha.gif.php" alt="Hard CAPTCHA" title="Hard CAPTCHA"><br>
+<img src="<?php echo $path ?>/danger_zone/captcha.gif.php" alt="Hard CAPTCHA" title="Hard CAPTCHA"><br>
 <input type="text" name="captcha" id="captcha"><br><br>
 <input type="submit" value="Nuke!" class="bugkiller-button">
 </form>
