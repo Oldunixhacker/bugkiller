@@ -25,18 +25,19 @@ class Captcha {
             $randomString .= $charSet[rand(0, strlen($charSet) - 1)];
         }
         // Create our CAPTCHA code
-	      $_SESSION['captcha'] = $randomString;
+              $_SESSION['captcha'] = $randomString;
         // Create GD image
         $image = imagecreatetruecolor($width, $height);
         $bgColor = imagecolorallocate($image, 255, 255, 255);
         imagefill($image, 0, 0, $bgColor);
         // Write the letters to the image
         for ($i = 0; $i < strlen($_SESSION['captcha']); $i++) {
-            $textColor = imagecolorallocate($image, 100,100,100);
+            $textColor = imagecolorallocate($image, 0,0,0);
             imagettftext($image, 40, rand(-20, 20), ($i * ($width / strlen($_SESSION['captcha']))) + rand(5, 10), rand(($height / 2) - 10, ($height / 2) + 10), $textColor, $IP . "/captcha.ttf", $_SESSION['captcha'][$i]);
         }
         // Make the image harder to read by bots.
-      	for ($i = 0; $i < 10000; $i++) {
+        for ($i = 0; $i < 10000; $i++) {
+                  $dot_color = imagecolorallocate($image, 0,0,0);
                   $x = rand(0, $width);
                   $y = rand(0, $height);
                   imagesetpixel($image, $x, $y, $dot_color);
