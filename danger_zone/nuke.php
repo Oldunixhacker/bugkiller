@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="<? echo $path ?>/style.css">
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   echo "BUGKILLER NUKE TOOL - ATTEMPTING TO PERFORM A NUKE!\n";
