@@ -12,10 +12,10 @@
 // Requires the GD library.                                     //
 //////////////////////////////////////////////////////////////////
 
-$IP = __dir__;
 session_start();
 class Captcha {
     public function generateCaptcha($width = 620, $height = 120, $characters = 14) {
+        $IP = __dir__;
         // Define characters the CAPTCHA is allowed to use.
         // Other characters will not be in the list.
         // Characters other than non-accent Latin characters and Arabic numerals, such as the letter æ,
@@ -33,7 +33,7 @@ class Captcha {
         // Write the letters to the image
         for ($i = 0; $i < strlen($_SESSION['captcha']); $i++) {
             $textColor = imagecolorallocate($image, 100,100,100);
-            imagettftext($image, 40, rand(-20, 20), ($i * ($width / strlen($_SESSION['captcha']))) + rand(5, 10), rand(($height / 2) - 10, ($height / 2) + 10), $textColor, "$IP/captcha.ttf", $_SESSION['captcha'][$i]);
+            imagettftext($image, 40, rand(-20, 20), ($i * ($width / strlen($_SESSION['captcha']))) + rand(5, 10), rand(($height / 2) - 10, ($height / 2) + 10), $textColor, $IP . "/captcha.ttf", $_SESSION['captcha'][$i]);
         }
         // Make the image harder to read by bots.
       	for ($i = 0; $i < 10000; $i++) {
