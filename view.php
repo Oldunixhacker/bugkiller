@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/style.css">
 <?php
-require "vender/autoload.php";
+require "vendor/autoload.php";
 require_once "topbar.php";
 require_once "configure.php";
 $iswiki = $config['wikitextallowed'];
