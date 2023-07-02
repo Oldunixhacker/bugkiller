@@ -1,15 +1,13 @@
 <?php
-function isMobile() {
-    return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
-}
-if (isMobile()) {
-	echo "You can only nuke from a desktop to prevent hoax nukes.";
-	header("HTTP/1.1 403 Forbidden");
-}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   echo "BUGKILLER NUKE TOOL - ATTEMPTING TO PERFORM A NUKE!\n";
   header("Content-Type: text/plain");
   require_once "../configure.php";
+  if (isMobile()) {
+	echo "You can only nuke from a desktop to prevent hoax nukes.";
+	header("HTTP/1.1 403 Forbidden");
+  }
   echo "\n\n";
   $IP = dirname($IP);
   if ($_POST['password'] != $password) {
