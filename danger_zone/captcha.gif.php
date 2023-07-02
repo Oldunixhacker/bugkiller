@@ -8,36 +8,36 @@
 // It can be used to check if the user is a bot.                //
 // To prevent automatic reading, the image is filled with       //
 // dots and lines.                                              //
-// Harder version that also blocks casual users.                //
 //                                                              //
 // Requires the GD library.                                     //
 //////////////////////////////////////////////////////////////////
 
 session_start();
 class Captcha {
-    public function generateCaptcha($width = 1020, $height = 120, $characters = 22) {
-        $IP = dirname(__dir__);
+    public function generateCaptcha($width = 1240, $height = 120, $characters = 24) {
+        $IP = __dir__;
         // Define characters the CAPTCHA is allowed to use.
         // Other characters will not be in the list.
         // Characters other than non-accent Latin characters and Arabic numerals, such as the letter æ,
         // may cause the captcha to use all letters it chooses to use.
-        $charSet = '1234567890QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm#@<>{}[]()$?!_-+=';
+        $charSet = '123456789*()&^%$£!<>{}()[]?.ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
         for ($i = 0; $i < $characters; $i++) {
             $randomString .= $charSet[rand(0, strlen($charSet) - 1)];
         }
         // Create our CAPTCHA code
-	      $_SESSION['captcha'] = $randomString;
+              $_SESSION['captcha'] = $randomString;
         // Create GD image
         $image = imagecreatetruecolor($width, $height);
         $bgColor = imagecolorallocate($image, 255, 255, 255);
         imagefill($image, 0, 0, $bgColor);
         // Write the letters to the image
         for ($i = 0; $i < strlen($_SESSION['captcha']); $i++) {
-            $textColor = imagecolorallocate($image, 100,100,100);
+            $textColor = imagecolorallocate($image, 0,0,0);
             imagettftext($image, 40, rand(-20, 20), ($i * ($width / strlen($_SESSION['captcha']))) + rand(5, 10), rand(($height / 2) - 10, ($height / 2) + 10), $textColor, $IP . "/captcha.ttf", $_SESSION['captcha'][$i]);
         }
         // Make the image harder to read by bots.
-      	for ($i = 0; $i < 50000; $i++) {
+        for ($i = 0; $i < 10000; $i++) {
+                  $dot_color = imagecolorallocate($image, 0,0,0);
                   $x = rand(0, $width);
                   $y = rand(0, $height);
                   imagesetpixel($image, $x, $y, $dot_color);
