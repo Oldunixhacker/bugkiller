@@ -10,6 +10,9 @@ function isSecure() {
     (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
     || $_SERVER['SERVER_PORT'] == 443;
 }
+function isMobile() {
+    return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
+}
 $config = parse_ini_file("config.ini");
 $servername = $config['servername'];
 $username = $config['username'];
@@ -21,6 +24,9 @@ if (isSecure()) {
   $pathwithhttp = "https://" . $config['path'];
 } else {
   $pathwithhttp = "http://" . $config['path'];
+}
+if (isMobile()) {
+    header("Location: $pathwithhttp/m");
 }
 if ($password == "") {
   header("HTTP/1.1 503 Service Unavailable");
