@@ -68,4 +68,4 @@ if ($bug) {
 $stmt->close();
 $mysqli->close();
 ?>
-<link rel="stylesheet" href="<? echo $path ?>/style.css">
+<link rel="stylesheet" href="<?php echo $path ?>/style.css">
