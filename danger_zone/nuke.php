@@ -10,6 +10,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("HTTP/1.1 401 Unauthorized");
     exit;
   }
+  if ($_POST['captcha'] == $_SESSION['captcha']) {
+        echo "Security measures verified.\n";
+  } else {
+	      echo "Incorrect or missing captcha.";
+        header("HTTP/1.1 401 Unauthorized");
+        exit;
+  }
   $conn = new mysqli($servername, $username, $password, $dbname);
   $sql = "DROP TABLE bugs;";
   if (mysqli_query($conn, $sql)) {
@@ -46,10 +53,13 @@ $IP = dirname($IP);
 <p>The configuration file will not be deleted.</p>
 <p><strong>This action is irreversable. <a href="<? echo $path ?>/backup.php">Backup the database</a> before you proceed.</strong></p>
 <hr>
-<p>Nuking is locked down using a hardcoded method to prevent hoax nukes. Enter the password for SQL user <code><?php echo $username; ?></code> to continue:</p>
+<p>Enter the password for SQL user <code><?php echo $username; ?></code> and complete the CAPTCHA to continue:</p>
 <form method="post">
 <label for="password">MySQL user password:</label>
 <input type="password" name="password"><br><br>
-<input type="submit" value="Nuke" class="bugkiller-button">
+<label for="captcha">Enter the letters you see in the image below:</label>
+<img src="<?php echo $IP ?>/captcha.gif.php" alt="CAPTCHA" title="CAPTCHA">
+<input type="text" name="captcha" id="captcha"><br><br>
+<input type="submit" value="Nuke!" class="bugkiller-button">
 </form>
 </html>
