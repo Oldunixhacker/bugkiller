@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Description is required.";
     $skipcreate = true;
   }
+  session_start();
   if ($_POST['captcha'] != $_SESSION['captcha']) {
 	      echo "Incorrect or missing captcha. The correct code is: " . $_SESSION['captcha'];
         $skipcreate = true;
