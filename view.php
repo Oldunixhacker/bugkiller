@@ -6,8 +6,9 @@ require_once "configure.php";
 $iswiki = $config['wikitextallowed'];
 $url = $_SERVER['REQUEST_URI'];
 $path = parse_url($url, PHP_URL_PATH);
-$segments = explode('/', $path);
-$arg = utf8_decode(urldecode($segments[2]));
+$segments = explode('/', trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'));
+$numSegments = count($segments); 
+$arg = $segments[$numSegments];
 if ($arg == "") {
   header("HTTP/1.1 400 Bad Request");
   echo "<p><b>Bad bug identifier:</b> No bug ID provided.</p>";
