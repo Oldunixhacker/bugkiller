@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/style.css">
 <?php
 require "vendor/autoload.php";
 require_once "topbar.php";
@@ -68,3 +67,5 @@ if ($bug) {
 }
 $stmt->close();
 $mysqli->close();
+?>
+<link rel="stylesheet" href="<? echo $path ?>/style.css">
