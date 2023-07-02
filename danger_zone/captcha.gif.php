@@ -37,7 +37,7 @@ class Captcha {
             imagettftext($image, 40, rand(-20, 20), ($i * ($width / strlen($_SESSION['captcha']))) + rand(5, 10), rand(($height / 2) - 10, ($height / 2) + 10), $textColor, $IP . "/captcha.ttf", $_SESSION['captcha'][$i]);
         }
         // Make the image harder to read by bots.
-      	for ($i = 0; $i < 75000; $i++) {
+      	for ($i = 0; $i < 50000; $i++) {
                   $x = rand(0, $width);
                   $y = rand(0, $height);
                   imagesetpixel($image, $x, $y, $dot_color);
