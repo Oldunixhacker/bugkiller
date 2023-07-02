@@ -21,6 +21,7 @@ class Captcha {
         // Characters other than non-accent Latin characters and Arabic numerals, such as the letter æ,
         // may cause the captcha to use all letters it chooses to use.
         $charSet = '234689ABbcdEefgHhiJjkLlmNnpRrsTtuvwx';
+        $randomString = '';
         for ($i = 0; $i < $characters; $i++) {
             $randomString .= $charSet[rand(0, strlen($charSet) - 1)];
         }
