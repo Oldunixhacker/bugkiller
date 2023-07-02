@@ -15,7 +15,7 @@
 session_start();
 class Captcha {
     public function generateCaptcha($width = 1240, $height = 120, $characters = 24) {
-        $IP = __dir__;
+        $IP = dirname(__dir__);
         // Define characters the CAPTCHA is allowed to use.
         // Other characters will not be in the list.
         // Characters other than non-accent Latin characters and Arabic numerals, such as the letter æ,
