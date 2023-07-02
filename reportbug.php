@@ -24,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $skipcreate = true;
   }
   if ($_POST['captcha'] != $_SESSION['captcha']) {
-	      echo "Incorrect or missing captcha.";
-        $skipcreate = tue;
+	      echo "Incorrect or missing captcha. The correct code is: " . $_SESSION['captcha'];
+        $skipcreate = true;
   }
   // Execute the SQL statement
   if ($skipcreate == false) {
