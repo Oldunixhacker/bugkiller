@@ -23,6 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Description is required.";
     $skipcreate = true;
   }
+  if ($_POST['captcha'] != $_SESSION['captcha']) {
+	      echo "Incorrect or missing captcha.";
+        $skipcreate = tue;
+  }
   // Execute the SQL statement
   if ($skipcreate == false) {
     $sql = "INSERT INTO bugs (bug_name, bug_description, status, priority) VALUES ('$title', '$description', 'Open', '$priority')";
@@ -56,6 +60,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </select><br><br>
         <input type="checkbox" name="searched" id="searched" required>
         <label for="searched"> I confirm that I have <a href="#barsearch">searched for existing bugs</a>.</label><br><br>
+        <label for="captcha">To verify you are not a spambot, we need you to enter the text shown in the image below (<a href="<?php echo $path ?>/captcha.php">help</a>):<br><img src="<?php echo $pathwithhttp ?>" title="CAPTCHA" alt="CAPTCHA"></label>
+        <input type="text" placeholder="CAPTCHA test" name="captcha" id="captcha">
         <input type="submit" value="Report" class="bugkiller-button">
         </form>
 </body>
