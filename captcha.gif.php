@@ -6,8 +6,8 @@
 // This is a script that outputs a GIF image of random text.    //
 // The text is placed in a session called "captcha".            //
 // It can be used to check if the user is a bot.                //
-// To prevent automatic reading, the image is filled with black //
-// dots.                                                        //
+// To prevent automatic reading, the image is filled with       //
+// colored dots.                                                //
 //                                                              //
 // Requires the GD library.                                     //
 //////////////////////////////////////////////////////////////////
@@ -33,10 +33,11 @@ class Captcha {
         // Write the letters to the image
         for ($i = 0; $i < strlen($_SESSION['captcha']); $i++) {
             $textColor = imagecolorallocate($image, 100,100,100);
-            imagettftext($image, 40, rand(-20, 20), ($i * ($width / strlen($_SESSION['captcha']))) + rand(5, 10), rand(($height / 2) - 10, ($height / 2) + 10), $textColor, "$IP/captcha.ttf", $_SESSION['captcha'][$i]);
+            imagettftext($image, 40, rand(-20, 20), ($i * ($width / strlen($_SESSION['captcha']))) + rand(5, 10), rand(($height / 2) - 10, ($height / 2) + 10), $textColor, "/var/captcha.ttf", $_SESSION['captcha'][$i]);
         }
         // Make the image harder to read by bots.
       	for ($i = 0; $i < 55000; $i++) {
+		  $dot_color = imagecolorallo
                   $x = rand(0, $width);
                   $y = rand(0, $height);
                   imagesetpixel($image, $x, $y, $dot_color);
