@@ -1,4 +1,10 @@
 <?php
+if (PHP_SAPI == 'apache2handler') {
+   header("Content-Type: text/plain");
+   header("HTTP/1.1 403 Forbidden");
+   echo "BUGKILLER MAINTENANCE\n\nPlease run maintenance scripts from your server's command-line shell.\nContact your administrator if you do not have access.";
+   exit;
+}
 if (PHP_SAPI != 'cli') {
    $runtype = PHP_SAPI;
    echo "Run this script via the command-line shell. If you do not have access to your server's shell contact your server administrator. Detected PHP_SAPI: $runtype\n";
