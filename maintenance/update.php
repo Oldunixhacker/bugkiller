@@ -8,6 +8,6 @@ echo "Attempting to update packages...\n";
 chdir(dirname(__DIR__));
 shell_exec("COMPOSER_ALLOW_SUPERUSER=1 composer update");
 echo "Pulling git changes...\n";
-shell_exec("git pull");
+shell_exec("git pull --no-rebase");
 chdir("maintenance");
 echo "Update finished!\n";
