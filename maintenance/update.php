@@ -17,7 +17,7 @@ if (posix_getuid() !== 0) {
 echo "Bugkiller Server Updater\n";
 echo "Attempting to update packages...\n";
 chdir(dirname(__DIR__));
-shell_exec("COMPOSER_ALLOW_SUPERUSER=1 composer update");
+shell_exec("COMPOSER_ALLOW_SUPERUSER=1 composer update --no-dev");
 echo "Pulling git changes...\n";
 shell_exec("git reset");
 shell_exec("git pull --no-rebase");
