@@ -2,7 +2,7 @@
 if (PHP_SAPI == 'apache2handler') {
    header("Content-Type: text/plain");
    header("HTTP/1.1 403 Forbidden");
-   echo "BUGKILLER MAINTENANCE\n\nPlease run maintenance scripts from your server's command-line shell.\nContact your administrator if you do not have access.";
+   echo "BUGKILLER MAINTENANCE\n\nPlease run maintenance scripts from your server's command-line shell, or by launching a PHP debug server on updateFromCliServer.php.\nContact your administrator if you do not have access.";
    exit;
 }
 if (PHP_SAPI != 'cli' and PHP_SAPI != 'cli-server') {
@@ -19,7 +19,7 @@ if (posix_getuid() !== 0) {
    exit;
 }
 if (PHP_SAPI == 'cli-server') {
-   require "../updateFromCliServer.php";
+   require "updateFromCliServer.php";
    exit;
 }
 echo "Bugkiller Server Updater\n";
