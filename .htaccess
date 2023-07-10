@@ -3,8 +3,13 @@
 # If you edit this file, ensure to add the following line to the .gitignore file:
 # .htaccess
 
-ErrorDocument 404 404.php
-<File config.ini>
-    Order allow,deny
-    Deny from all
+# Prevent sneaky people from seeing your configuration.
+# DO NOT REMOVE THESE LINES UNLESS YOUR BUGKILLER IS PRIVATE.
+<Files config.ini>
+    Require all denied
 </Files>
+
+# Allow using short links to bugs, e.g. B1 > view.php/1.
+# Useful if you consider the view.php too technical.
+RewriteEngine On
+RewriteRule ^B([0-9]+)/?$ view.php/$1 [L]
