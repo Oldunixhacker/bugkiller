@@ -4,7 +4,7 @@
 # .htaccess
 
 ErrorDocument 404 404.php
-<Files ~ ".*/config\.ini$">
+<File config.ini>
     Order allow,deny
     Deny from all
 </Files>
