@@ -1,6 +1,7 @@
 <?php
 if (PHP_SAPI != 'cli') {
-   echo "Run this script via the command-line shell. If you do not have access to your server's shell contact your server administrator.\n";
+   $runtype = PHP_SAPI;
+   echo "Run this script via the command-line shell. If you do not have access to your server's shell contact your server administrator. Detected PHP_SAPI: $runtype\n";
    exit;
 }
 echo "Bugkiller Server Updater\n";
