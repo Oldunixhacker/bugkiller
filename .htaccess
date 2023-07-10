@@ -14,7 +14,7 @@
 # Allow using short links to bugs, e.g. example.com/B1 > example.com/view.php/1.
 # Useful if you consider the view.php too technical.
 RewriteEngine On
-RewriteRule B^([0-9]+)/?$ view.php/$1 [L]
+RewriteRule ^B([0-9]+)/?$ view.php/$1 [L]
 
 # Rewrite several short links to technical ones.
 RewriteRule ^reportbug$ reportbug.php
