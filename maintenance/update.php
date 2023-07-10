@@ -5,9 +5,9 @@ if (PHP_SAPI != 'cli') {
 }
 echo "Bugkiller Server Updater\n";
 echo "Attempting to update packages...\n";
+chdir(dirname(__DIR__));
 shell_exec("COMPOSER_ALLOW_SUPERUSER=1 composer update");
 echo "Pulling git changes...\n";
-chdir(dirname(__DIR__));
 shell_exec("git pull");
 chdir("maintenance");
-echo "Update finished!";
+echo "Update finished!\n";
