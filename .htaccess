@@ -13,3 +13,8 @@
 # Useful if you consider the view.php too technical.
 RewriteEngine On
 RewriteRule ^B([0-9]+)/?$ view.php/$1 [L]
+
+# Rewrite several short links to technical ones.
+RewriteRule ^reportbug$ reportbug.php
+RewriteRule ^version$ version.php
+RewriteRule ^captcha.gif$ captcha.gif.php
