@@ -4,7 +4,7 @@
 * **All contributions must be made in accordance with the Bugkiller Code of Conduct.**
 * **Before you start contributing, please read the [Bugkiller wiki](https://github.com/TylerMS887/bugkiller/wiki).** This will give you a good understanding of how the project works and how to contribute.
 * **If you find a bug, please open an issue on GitHub.** Be sure to include as much information as possible, such as the steps to reproduce the bug and the expected behavior.
-* **If you want to contribute code, please create a pull request.**
+* **If you want to contribute code, please create a pull request.** Test your changes by cloning Bugkiller in your server root. You will need a web server to do so.
 * **All contributions will be reviewed by the Bugkiller team before they are merged.**
 
 Here are some additional tips for contributing to Bugkiller:
