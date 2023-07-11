@@ -30,6 +30,4 @@ echo "Pulling git changes...\n";
 shell_exec("git reset");
 shell_exec("git pull --no-rebase");
 chdir("maintenance");
-echo "Restarting Apache server...\n";
-shell_exec("apachectl restart");
 echo "Update finished!\n";
