@@ -10,7 +10,7 @@ if (posix_getuid() !== 0) {
 echo "<h1>Bugkiller Web Upgrade</h1>";
 chdir(dirname(__DIR__));
 echo "<h3>Update packages</h3><pre><code>";
-echo nl2br(shell_exec("composer update --no-dev"));
+echo nl2br(shell_exec("COMPOSER_ALLOW_SUPERUSER=1 composer update --no-dev"));
 echo "</code></pre>";
 echo "<h3>Update from Git</h3>";
 echo "<pre><code>";
