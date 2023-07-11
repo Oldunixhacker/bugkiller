@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo $pathwithhttp ?>/style.css">
+<link rel="stylesheet" href="style.css">
 <?php
 require "vendor/autoload.php";
 require_once "topbar.php";
