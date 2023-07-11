@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
   <title>Search results for "<?php echo $searchq ?>" - <?php echo $projectname ?></title>
-  <link rel="stylesheet" href='<?php echo "$path"; ?>/style.css'>
+  <link rel="stylesheet" href='style.css'>
 </head>
 <body>
 
