@@ -13,6 +13,17 @@ function isSecure() {
 function isMobile() {
     return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
 }
+$readonly = htmlspecialchars($config['readonly']);
+function blockIfReadOnly() {
+  if $readonly != "" {
+    echo "<p>This bug tracker has been put in read-only mode. This is probably to do database maintenance, or to archive a site completely.</p>";
+    echo "<p>If you go outside and scream \"Hey devs, why is Bugkiller read-only?\" at your loudest outside voide, you still won't get support.</p>";
+    if $readonly != "y" {
+      echo "<p>The following explanation was provided: $readonly</p>";
+    }
+    exit;
+  }
+}
 $config = parse_ini_file("config.ini");
 $servername = $config['servername'];
 $username = $config['username'];
