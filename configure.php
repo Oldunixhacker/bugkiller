@@ -13,7 +13,7 @@ function isSecure() {
 function isMobile() {
     return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
 }
-$readonly = htmlspecialchars($config['readonly']);
+$readonly = $config['readonly'];
 function blockIfReadOnly() {
   if ($readonly != "") {
     echo "<p>This bug tracker has been put in read-only mode. This is probably to do database maintenance, or to archive a site completely.</p>";
