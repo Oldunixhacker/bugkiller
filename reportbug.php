@@ -66,8 +66,8 @@ blockIfReadOnly();
         </select><br><br>
         <input type="checkbox" name="searched" id="searched" required>
         <label for="searched"> I confirm that I have <a href="#barsearch">searched for existing bugs</a>.</label><br><br>
-        <label for="captcha">To verify you are not a spambot, we need you to enter the text shown in the image below (<a href="<?php echo $path ?>/captcha.php">help</a>):<br><img id="bugkiller-captcha-code" src="<?php echo $path ?>/captcha.gif.php" onload="captchaResize()" title="CAPTCHA" alt="CAPTCHA"><br><br></label>
-        <input type="text" placeholder="CAPTCHA test" name="captcha" id="captcha"><br>
+        <label for="captcha">To verify you are not a spambot, we need you to enter the text shown in the image below (<a href="<?php echo $path ?>/captcha.php">help</a>):<br><img id="bugkiller-captcha-code" src="<?php echo $path ?>/captcha.gif.php" onload="captchaResize()" title="CAPTCHA" alt="CAPTCHA"><br></label>
+        <input type="text" placeholder="CAPTCHA test" name="captcha" id="captcha"><br><br>
         <input type="submit" value="Fire Bombs" class="bugkiller-button">
         </form>
 </body>
