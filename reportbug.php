@@ -5,6 +5,7 @@ require_once "configure.php";
 $wikitextallowed = $config['wikitextallowed'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  blockIfReadObly();
   $conn = new mysqli($servername, $username, $password, $dbname);
   $title = $_POST["title"];
   $description = $_POST["description"];
