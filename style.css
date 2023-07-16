@@ -108,3 +108,7 @@ input[type="text"] {
 pre.user-generated-content, code.user-generated-content {
   font-family: sans-serif;
 }
+.bugkiller-captcha-input-modified {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
