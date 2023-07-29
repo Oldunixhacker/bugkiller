@@ -45,7 +45,7 @@ endofhtml . $pathwithttp . <<<endofhtml
 " method="post"><span><i class="fa-solid fa-search"></i></span></button>
 </form>
 endofhtml;
-echo "<a href='$path'>$projectname</a><span style='margin-right: 10px'></span>";
+echo "<a href='$path' id='bugkiller-logo'>$projectname</a><span style='margin-right: 10px'></span>";
 echo "<a href='$path/reportbug'>Report a Bug</a><span style='margin-right: 10px'></span>";
 
 // Move on to the rest of the UI using CSS
