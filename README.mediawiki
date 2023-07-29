@@ -5,7 +5,6 @@ project. It uses a MySQL database.
 
 ==Features==
 
-* OoUI-like interface, so that it fits perfectly with MediaWiki wiki farms and hosting services.
 * Allows your project's contributors to report bugs.
 * Lets administrators block and monitor users (in the future).
 * Uses accounts (in the future).
