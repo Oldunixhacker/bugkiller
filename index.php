@@ -55,7 +55,7 @@ $conn->close();
 <body>
 <h1><?php echo $projectname . " Bugkiller"; ?></h1>
 <div id="bugkiller-report-js-button" style="display:none">
-<button class="bugkiller-button" onclick="window.location.href = '<?php echo "$path"; ?>/reportbug.php';"><span class="bugkiller-icon-mail"></span> Report a Bug</button>
+<button class="bugkiller-button" onclick="window.location.href = '<?php echo "$path"; ?>/reportbug.php';"><i class="fa-solid fa-bug"></i> Report a Bug</button>
 </div>
 <script>
 document.getElementById('bugkiller-report-js-button').style.display='block';
