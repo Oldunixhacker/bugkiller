@@ -32,9 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the search term from the form
     $search = mysqli_real_escape_string($conn, $_POST["search"]);
-
+    
     // Ensure that the user provided a search query to Bugkiller
-    if ($search == "") {
+    if (str_replace(' ', '', $search); == "") {
+      echo "Please provide a search query.";
       exit;
     }
     
@@ -59,7 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "<p>You can <a href=\"$path/reportbug.php\">report a bug</a> if these search results did not help.</p>";
     } else {
       // Output a message if no results were found
-      echo "<p>Couldn't find any bugs that match \"$search\". You can <a href=\"$path/reportbug.php\">report a bug</a> with that name.</p>";
+      echo "<p><b>Couldn't find any bugs that match \"$search\".</b></p><p>You can:</p>";
+      echo "<ul>"
+      echo "<li><a href=\"$path/reportbug.php\">Report a bug</a> with that name.</li>";
+      echo "<li><a href=\"#barsearch\">Searching for something else</a>.</li>";
+      echo "<li>Using a search engine if you are not looking for search results related to $projectname.</li>";
     }
   }
 
