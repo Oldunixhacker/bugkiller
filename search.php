@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $search = mysqli_real_escape_string($conn, $_POST["search"]);
     
     // Ensure that the user provided a search query to Bugkiller
-    if (str_replace(' ', '', $search); == "") {
+    if (str_replace(' ', '', $search) == "") {
       echo "Please provide a search query.";
       exit;
     }
