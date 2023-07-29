@@ -112,9 +112,16 @@ pre.user-generated-content, code.user-generated-content {
   border-radius: 0;
 }
 
-/* New button design since 29 Jul, 2023.
- * https://codepen.io/sebj54/pen/ogvzdr - Licensed under the MIT license.
- */
+/*************************************************************************
+ * New button design since 29 Jul, 2023.                                  *
+ * https://codepen.io/sebj54/pen/ogvzdr - Licensed under the MIT license. *
+ * Modified to suit modernization needs and add more style to it.         *
+ *                                                                        *
+ * TODO: Remove old button styles (those gray ones) completely.           *
+ *                                                                        *
+ *                                                        -- @TylerMS887  *
+ *************************************************************************/
+
 .bugkiller-button {
   cursor: pointer;
   
