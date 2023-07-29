@@ -49,6 +49,7 @@ $IP = dirname($IP);
 <html lang="en">
 <head>
 <title>Nuke - <?php echo $projectname . " Bugkiller"; ?></title>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <h1>Nuke this bug tracker</h1>
@@ -64,6 +65,6 @@ $IP = dirname($IP);
 <label for="captcha">Enter the letters you see in the image below:</label><br>
 <img src="<?php echo $path ?>/danger_zone/captcha.gif.php" alt="Hard CAPTCHA" title="Hard CAPTCHA"><br>
 <input type="text" name="captcha" id="captcha"><br><br>
-<input type="submit" value="Nuke!" class="bugkiller-button">
+<input type="submit" value="Nuke!" class="bugkiller-button bugkiller-dangerous">
 </form>
 </html>
