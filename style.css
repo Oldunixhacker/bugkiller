@@ -217,4 +217,5 @@ pre.user-generated-content, code.user-generated-content {
   border-radius: 1px;
   box-shadow: none;
   font-family: Arial, sans-serif;
+  padding: 0.5px;
 }
