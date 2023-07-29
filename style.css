@@ -111,6 +111,10 @@ pre.user-generated-content, code.user-generated-content {
 .bugkiller-captcha-input-modified {
   border-radius: 0;
 }
+
+/* New button design since 29 Jul, 2023.
+ * https://codepen.io/sebj54/pen/ogvzdr - Licensed under the MIT license.
+ */
 .bugkiller-button {
   cursor: pointer;
   
