@@ -23,7 +23,7 @@ textarea {
   resize: none;
   padding: 10px;
 }
-.bugkiller-button {
+.bugkiller-legacy-button {
   padding: 10px;
   border: 1px gray solid;
   transition: background-color 0.3s;
@@ -33,10 +33,10 @@ textarea {
   font-weight: 700;
   border-radius: 3px;
 }
-.bugkiller-button:hover {
+.bugkiller-legacy-button:hover {
   background-color: #b3b3b3;
 }
-.bugkiller-button:active {
+.bugkiller-legacy-button:active {
   background-color: #a1a1a1;
 }
 input[type="text"] {
@@ -110,4 +110,101 @@ pre.user-generated-content, code.user-generated-content {
 }
 .bugkiller-captcha-input-modified {
   border-radius: 0;
+}
+.bugkiller-button {
+  cursor: pointer;
+  
+  position: relative;
+
+  display: block;
+  margin: 30px auto;
+  padding: 0;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  font-weight: bold;
+  
+  color: #ecf0f1;
+  background-color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  
+  transition: background-color .3s;
+  
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.bugkiller-button:hover {
+  background-color: #a6a6a6;
+}
+
+.bugkiller-button > * {
+  position: relative;
+}
+
+.bugkiller-button span {
+  display: block;
+  padding: 12px 24px;
+}
+
+.bugkiller-button:before {
+  content: "";
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  display: block;
+  width: 0;
+  padding-top: 0;
+  opacity: 0;
+    
+  border-radius: 100%;
+  
+  background-color: rgba(236, 240, 241, .3);
+  
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.bugkiller-button:active:before {
+  width: 120%;
+  padding-top: 120%;
+  opacity: 100%;
+  
+  transition: width .2s ease-out, padding-top .2s ease-out, opacity .2s ease-out;
+}
+
+.bugkiller-button.bugkiller-success {
+  background-color: #55cf4a;
+}
+
+.bugkiller-button.bugkiller-success:hover {
+  background-color: #77e06e;
+}
+
+.bugkiller-button.bugkiller-dangerzone {
+  background-color: #e74c3c;
+}
+
+.bugkiller-button.bugkiller-dangerzone:hover {
+  background-color: #c0392b;
+}
+
+.bugkiller-button.the-past {
+  background-color: #cfcfcf;
+  border: 1px solid #737373;
+  color: black;
+  text-transform: none;
+  letter-spacing: 0;
+  border-radius: 1px;
+  box-shadow: none;
+  font-family: Arial, sans-serif;
 }
