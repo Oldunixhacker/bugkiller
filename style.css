@@ -155,10 +155,6 @@ pre.user-generated-content, code.user-generated-content {
   position: relative;
 }
 
-.bugkiller-button span {
-  display: block;
-}
-
 .bugkiller-button:before {
   content: "";
   
@@ -180,14 +176,15 @@ pre.user-generated-content, code.user-generated-content {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+
+  transition: width .2s ease-out, padding-top .2s ease-out, opacity .2s ease-out, border-radius .2s ease-out;
 }
 
 .bugkiller-button:active:before {
   width: 120%;
   padding-top: 120%;
   opacity: 100%;
-  
-  transition: width .2s ease-out, padding-top .2s ease-out, opacity .2s ease-out;
+  border-radius: 10px;
 }
 
 .bugkiller-button.bugkiller-success {
