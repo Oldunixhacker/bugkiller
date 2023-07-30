@@ -53,10 +53,6 @@ input[type="text"] {
   display: none;
   visibility: hidden;
 }
-.bugkiller-icon-mail:after {
-  font-family: wingdings;
-  content: "*";
-}
 #js-disabled {
   background-color: red;
   font-weight: 700;
