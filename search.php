@@ -1,6 +1,7 @@
 <?php
 require_once "topbar.php";
 require_once "configure.php";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $searchq = $_POST["search"];
 } else {
@@ -9,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="stylesheet" href='style.css'>
 </head>
 <body>
-
   <h1>Search results for "<?php echo $searchq ?>"</h1>
 
   <?php
@@ -72,6 +73,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Close the database connection
   mysqli_close($conn);
   ?>
-
 </body>
 </html>
