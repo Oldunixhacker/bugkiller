@@ -65,7 +65,6 @@ if (file_exists('config.ini')) {
     $password = $config['password'];
     $wikitextallowed = $config['wikitextallowed'];
     $setupallowed = $config['setupallowed'];
-    echo "<p><em>Note: An existing configuration file was detected and has been loaded.</em></p>";
     if (!$setupallowed) {
         echo "<p>This script has been disabled by a system administrator. You must manually edit the config.ini file instead.";
         header("HTTP/1.1 403 Forbidden");
