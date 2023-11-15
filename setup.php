@@ -38,10 +38,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $config .= "wikitextallowed = $wikitextallowed\n";
     $config .= "setupallowed = $setupallowed\n";
     $config .= "path = \"$path\"";
-    echo "The resulting config.ini file is:";
-    echo "<pre>";
-    echo "$config";
-    echo "</pre>";
+    $file = fopen(__DIR__ . "/config.ini", "w");
+
+    // Check if the file is opened successfully
+    if ($file) {
+      // Write the contents of $config to the file
+      fwrite($file, $config);
+    
+      // Close the file
+      fclose($file);
+    
+      // Echo a success message
+      header("Location: index.php");
+    } else {
+      // Echo an error message
+      echo "File could not be created. For reference you can create config.ini in the Bugkiller folder with these contents:<br><pre>$config</pre>";
+    }
     exit;
 }
 if (file_exists('config.ini')) {
