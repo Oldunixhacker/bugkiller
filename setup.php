@@ -66,36 +66,33 @@ if (file_exists('config.ini')) {
 <html>
 <head>
         <title>Bugkiller Setup</title>
+        <link rel="stylesheet" href="setup.css">
 </head>
 <body>
-        <h1>Bugkiller Setup</h1>
-        <p>Get Bugkiller up and running in a few clicks.</p>
+        <div class="titlebar">Welcome to Bugkiller!</div>
         <form method="post">
-                <label for="path">Bugkiller web path: <input type="text" value='<?php echo "$path"; ?>' readonly></input> (unmodifiable from the web to prevent errors)</label>
+                <label for="projectname">What is your project's name?</label><br>
+                <input type="text" value='<?php echo "$projectname"; ?>' name="projectname" required><br><br>
+            
+                <label for="path">We are assuming your site is located at:<br><input type="text" value='<?php echo "$path"; ?>' readonly></input><br>If this is incorrect you can change it through the terminal after setting up.</label>
                 <span id="path"><!--dummy--></span><br><br>
                 
-                <label for="servername">Server name:</label>
+                <label for="servername">What MySQL server should Bugkiller connect to?</label><br>
                 <input type="text" name="servername" value='<?php echo "$servername"; ?>' required><br><br>
 
-                <label for="username">MySQL username:</label>
-                <input type="text" name="username" value='<?php echo "$username"; ?>' required><br><br>
+                <label for="username">Authenticate your database.</label><br>
+                <input type="text" name="username" placeholder="Username" value='<?php echo "$username"; ?>' required><br>
+                <input type="password" name="password" placeholder="Password"><br><br>
 
-                <label for="password">MySQL user password:</label>
-                <input type="password" name="password"><br><br>
-
-                <label for="dbname">Database name:</label>
+                <label for="dbname">What database should Bugkiller control?</label><br>
                 <input type="text" value='<?php echo "$dbname"; ?>' name="dbname" required><br><br>
-
-                <label for="projectname">Project name:</label>
-                <input type="text" value='<?php echo "$projectname"; ?>' name="projectname" required><br><br>
             
                 <?php if ($wikitextallowed == true) {echo '<input type="checkbox" id="wwallowed" name="wwallowed" value="true" checked>';} else {echo '<input type="checkbox" id="wwallowed" name="wwallowed" value="true">';} ?>
                 <label for="wwallowed"> Allow Wikitext formatting in bug descriptions</label><br><br>
                 <input type="checkbox" id="setupallowed" name="setupallowed" value="true" checked>
-                <label for="setupallowed"> Allow further use of this script instead of manually editing config.ini</label><br><br>
+                <label for="setupallowed"> Allow further use of Setup instead of manually editing config.ini</label><br><br>
 
-                <p>After filling out the form above, you can apply the configuration.</p>
-                <input type="submit" value="Configure">
+                <input type="submit" value="I'm Ready">
         </form>
 </body>
 </html>
