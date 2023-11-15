@@ -45,7 +45,7 @@ if ($bug) {
       echo $htmlDescription;
     } else {
       echo '<pre class="user-generated-content"><code class="user-generated-content">';
-      echo wordwrap($bug_description, 20);
+      echo wordwrap($bug_description, 250);
       echo '</code></pre>';
     }
     if ($status == "Closed") {
