@@ -44,9 +44,9 @@ if ($bug) {
         ->parse();
       echo $htmlDescription;
     } else {
-      echo '<pre class="user-generated-content"><code class="user-generated-content">';
+      echo '<pre class="user-generated-content">';
       echo wordwrap($bug_description, 125);
-      echo '</code></pre>';
+      echo '</pre>';
     }
     if ($status == "Closed") {
       echo "<b>This bug report has been closed. No new comments are accepted.</b>";
