@@ -41,7 +41,7 @@ echo <<<endofhtml
 <form method="post" action="$path/search.php" style="float: right;">
     <input type="text" id="barsearch" name="search" style="width: 300px;" value="" placeholder="Search bugs..." value="$searchb">
     <button class="bugkiller-button the-past" type="submit" action="
-endofhtml . $pathwithttp . <<<endofhtml
+endofhtml . $pathwithhttp . <<<endofhtml
 " method="post"><span><i class="fa-solid fa-search"></i></span></button>
 </form>
 endofhtml;
