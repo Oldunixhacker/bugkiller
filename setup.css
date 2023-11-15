@@ -1,0 +1,15 @@
+.titlebar {
+  padding: 30px;
+  font-weight: bold;
+  background-color: purple;
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+form {
+  margin: 50px;
+}
