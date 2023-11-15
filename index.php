@@ -20,7 +20,7 @@ if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
 if (!file_exists('config.ini')) {
   header('HTTP/1.1 500 Internal Server Error');
   echo '<h1>Bugkiller Error: Internal Server Error</h1>';
-  echo '<p><code>config.ini</code> does not exist. Please run <a href="/bugkiller/setup.php"><code>setup.php</code></a> to set up the bug tracker\'s configuration.</p>';
+  echo '<p><code>config.ini</code> does not exist. Please run <a href="setup.php"><code>setup.php</code></a> to set up the bug tracker\'s configuration.</p>';
   echo '<p>Please note that additional errors might occur when you start the bug tracker even when configured. If you do get errors like those, ensure your MySQL database exists.</p>';
 }
 
