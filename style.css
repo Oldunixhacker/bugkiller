@@ -102,7 +102,7 @@ input[type="text"] {
   font-style: italic;
 }
 pre.user-generated-content, code.user-generated-content {
-  font-family: sans-serif;
+  width: 75%;
 }
 .bugkiller-captcha-input-modified {
   border-radius: 0;
